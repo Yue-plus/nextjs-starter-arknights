@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      "ark-blue": "#22bbff",
+      "ark-blue": "#18d1ff",
       "end-yellow": "#ffee22",
     },
     extend: {
