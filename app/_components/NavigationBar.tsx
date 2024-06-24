@@ -1,5 +1,6 @@
+"use client"
 import {oswald_medium} from "@/app/fonts";
-import React from "react";
+import React, {useEffect} from "react";
 
 export interface NavigationItem {
     titleZh: string
@@ -21,7 +22,10 @@ interface NavigationBarProps {
 }
 
 export default function NavigationBar({viewIndex}: NavigationBarProps) {
-    location.hash = "#" + NavigationList[viewIndex].titleEn.toLowerCase()
+    useEffect(() => {
+        location.hash = "#" + NavigationList[viewIndex].titleEn.toLowerCase()
+    }, [viewIndex])
+
     return <nav className="fixed top-0 right-0 left-0 z-[23] flex items-center" style={{
         height: "6.75rem",
         backgroundImage: "linear-gradient(0deg, transparent, rgba(0, 0, 0, .6), rgba(0, 0, 0, .8));"
