@@ -1,10 +1,8 @@
 import React from "react";
 import type {Metadata} from "next";
-import {Inter} from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/app/_components/NavigationBar";
-
-const inter = Inter({subsets: ["latin"]});
+import {inter} from "@/app/fonts";
 
 export const metadata: Metadata = {
     title: "Arknights",

@@ -1,5 +1,5 @@
 export default function Index() {
-  return <div className="bg-green-900 w-screen h-screen opacity-75">
+  return <div className="w-screen h-screen opacity-75" style={{backgroundColor: "darkgreen"}}>
     <h1 className="text-9xl absolute top-1/4 left-1/4">Index</h1>
   </div>;
 }
