@@ -19,9 +19,24 @@ export const NavigationList: NavigationItem[] = [
 
 interface NavigationBarProps {
     viewIndex: number
+    setViewIndex: React.Dispatch<React.SetStateAction<number>>
 }
 
-export default function NavigationBar({viewIndex}: NavigationBarProps) {
+export default function NavigationBar({viewIndex, setViewIndex}: NavigationBarProps) {
+    useEffect(() => {
+        const handleHashChange = (hce: HashChangeEvent) => {
+            const newHash = hce.newURL.split("#")[1]
+            const oldHash = hce.oldURL.split("#")[1]
+            const newIndex = NavigationList.findIndex(item => item.titleEn === newHash.toUpperCase())
+            const oldIndex = NavigationList.findIndex(item => item.titleEn === oldHash.toUpperCase())
+            document.getElementById(newHash)!.style.cssText += `width: 100%; left: 0};`
+            document.getElementById(oldHash)!.style.cssText += `width: 0%; left: ${newIndex > oldIndex ? "0" : "auto"};`
+            setViewIndex(newIndex)
+        }
+        window.addEventListener("hashchange", handleHashChange)
+        return () => window.removeEventListener("hashchange", handleHashChange)
+    }, [setViewIndex]);
+
     useEffect(() => {
         location.hash = "#" + NavigationList[viewIndex].titleEn.toLowerCase()
     }, [viewIndex])
@@ -35,7 +50,7 @@ export default function NavigationBar({viewIndex}: NavigationBarProps) {
                 return <li key={index}
                            className={`inline-block text-center mx-10 duration-300 hover:text-ark-blue ${viewIndex == index ? "text-ark-blue" : ""}`}>
                     <a href={item.href}>
-                        <div className={`${oswald_medium.className} text-xl`}>{item.titleEn}</div>
+                        <div className={`${oswald_medium.className} text-xxl`}>{item.titleEn}</div>
                         <div>{item.titleZh}</div>
                     </a>
                 </li>
