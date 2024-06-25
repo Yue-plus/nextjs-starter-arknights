@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{
     children: React.ReactNode;
 }>) {
-    return <html lang="zh" style={{fontSize: "12px"}}>
+    return <html lang="zh" style={{fontSize: "16px"}}>
         <body className={inter.className}>{children}</body>
     </html>
 }

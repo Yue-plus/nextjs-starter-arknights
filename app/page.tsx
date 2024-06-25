@@ -41,6 +41,36 @@ function More() {
 }
 
 export default function Root() {
+    useEffect(() => {
+        const handleWindowResize = () => {
+            let fontSize = 16
+
+            if (innerHeight > innerWidth) {
+                const designWidth = 750;
+                const designHeight = 1334;
+                if (innerWidth / innerHeight > designWidth / designHeight) {
+                    fontSize *= innerHeight / designHeight
+                } else {
+                    fontSize *= innerWidth / designWidth
+                }
+            } else {
+                const designWidth = 1920;
+                const designHeight = 1080;
+                if (innerWidth / innerHeight > designWidth / designHeight) {
+                    fontSize *= innerHeight / designHeight;
+                } else {
+                    fontSize *= innerWidth / designWidth;
+                }
+            }
+
+            document.documentElement.style.fontSize = fontSize + "px"
+        }
+
+        handleWindowResize()
+        window.addEventListener("resize", handleWindowResize)
+        return () => window.removeEventListener("resize", handleWindowResize)
+    }, []);
+
     const [viewIndex, setViewIndex] = useState(0)
 
     // 监听鼠标滚轮修改页面锚点链接

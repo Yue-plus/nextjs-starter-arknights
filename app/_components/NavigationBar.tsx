@@ -46,11 +46,11 @@ export default function NavigationBar({viewIndex, setViewIndex}: NavigationBarPr
         backgroundImage: "linear-gradient(0deg, transparent, rgba(0, 0, 0, .6), rgba(0, 0, 0, .8));"
     }}>
         <ul className="flex justify-evenly">{
-            NavigationList.map((item: NavigationItem, index, array) => {
+            NavigationList.map((item: NavigationItem, index) => {
                 return <li key={index}
                            className={`inline-block text-center mx-10 duration-300 hover:text-ark-blue ${viewIndex == index ? "text-ark-blue" : ""}`}>
                     <a href={item.href}>
-                        <div className={`${oswald_medium.className} text-xxl`}>{item.titleEn}</div>
+                        <div className={oswald_medium.className} style={{fontSize: "1.375rem"}}>{item.titleEn}</div>
                         <div>{item.titleZh}</div>
                     </a>
                 </li>
