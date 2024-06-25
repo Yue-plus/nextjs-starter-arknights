@@ -1,6 +1,7 @@
 "use client"
 import {oswald_medium} from "@/app/fonts";
 import React, {useEffect} from "react";
+import Image from "next/image";
 
 export interface NavigationItem {
     titleZh: string
@@ -45,13 +46,16 @@ export default function NavigationBar({viewIndex, setViewIndex}: NavigationBarPr
         height: "6.75rem",
         backgroundImage: "linear-gradient(0deg, transparent, rgba(0, 0, 0, .6), rgba(0, 0, 0, .8));"
     }}>
+        <a className="mx-10" href="/" style={{width: "12rem", marginLeft: "3rem", marginRight: "auto"}}>
+            <Image width={180} height={60} src="/next.svg" alt="next"/>
+        </a>
         <ul className="flex justify-evenly">{
             NavigationList.map((item: NavigationItem, index) => {
                 return <li key={index}
                            className={`inline-block text-center mx-10 duration-300 hover:text-ark-blue ${viewIndex == index ? "text-ark-blue" : ""}`}>
-                    <a href={item.href}>
+                    <a href={item.href} className="text-left">
                         <div className={oswald_medium.className} style={{fontSize: "1.375rem"}}>{item.titleEn}</div>
-                        <div>{item.titleZh}</div>
+                        <div style={{fontSize: "0.875rem"}}>{item.titleZh}</div>
                     </a>
                 </li>
             })
