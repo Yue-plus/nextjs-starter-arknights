@@ -2,10 +2,10 @@
 import React, {useEffect, useState} from "react";
 import NavigationBar, {NavigationList} from "@/app/_components/NavigationBar";
 
-const pageClassName: string = "w-0 h-screen fixed top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
+const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
 function Index() {
-    return <div id="index" className={pageClassName} style={{width: "100vw", left: 0, backgroundColor: "darkgreen"}}>
+    return <div id="index" className={pageClassName} style={{width: "100%", left: 0, backgroundColor: "darkgreen"}}>
         <h1 className="text-9xl absolute top-1/4 left-1/4">Index</h1>
     </div>
 }
@@ -92,14 +92,9 @@ export default function Root() {
         return () => window.removeEventListener("wheel", handleScroll);
     }, []);
 
-    return <>
+    return <div className="relative w-full h-full m-auto max-w-[180rem]">
         <NavigationBar {...{viewIndex, setViewIndex}} />
-        <main className="w-screen h-screen fixed top-0 right-0 bottom-0 left-0" style={{
-            backgroundImage: "url('/media/bg.jpg')",
-            backgroundPosition: "50%",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-        }}>
+        <main className="w-full h-full relative select-none">
             <Index/>
             <Information/>
             <Operator/>
@@ -107,5 +102,5 @@ export default function Root() {
             <Media/>
             <More/>
         </main>
-    </>
+    </div>
 }

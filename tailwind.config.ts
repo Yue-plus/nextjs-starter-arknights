@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const config: Config = {
   content: [
@@ -10,6 +11,8 @@ const config: Config = {
     colors: {
       "ark-blue": "#18d1ff",
       "end-yellow": "#ffee22",
+      "black": colors.black,
+      "white": colors.white,
     },
     extend: {
       backgroundImage: {

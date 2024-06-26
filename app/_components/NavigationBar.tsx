@@ -42,9 +42,8 @@ export default function NavigationBar({viewIndex, setViewIndex}: NavigationBarPr
         location.hash = "#" + NavigationList[viewIndex].titleEn.toLowerCase()
     }, [viewIndex])
 
-    return <nav className="fixed top-0 right-0 left-0 z-[23] flex items-center" style={{
-        height: "6.75rem",
-        backgroundImage: "linear-gradient(0deg, transparent, rgba(0, 0, 0, .6), rgba(0, 0, 0, .8));"
+    return <nav className="w-full h-[6.75rem] absolute top-0 left-0 z-[23] flex items-center" style={{
+        backgroundImage: "linear-gradient(0deg, transparent, rgba(0, 0, 0, .6), rgba(0, 0, 0, .8))"
     }}>
         <a className="mx-10" href="/" style={{width: "12rem", marginLeft: "3rem", marginRight: "auto"}}>
             <Image width={180} height={60} src="/next.svg" alt="next"/>
