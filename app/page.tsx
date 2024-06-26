@@ -1,6 +1,6 @@
 "use client"
 import React, {useEffect, useState} from "react";
-import NavigationBar, {NavigationList} from "@/app/_components/NavigationBar";
+import Header, {NavigationList} from "@/app/_components/Header";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
@@ -93,7 +93,7 @@ export default function Root() {
     }, []);
 
     return <div className="relative w-full h-full m-auto max-w-[180rem]">
-        <NavigationBar {...{viewIndex, setViewIndex}} />
+        <Header {...{viewIndex, setViewIndex}} />
         <main className="w-full h-full relative select-none">
             <Index/>
             <Information/>

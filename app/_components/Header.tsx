@@ -2,6 +2,7 @@
 import {oswald_medium} from "@/app/fonts";
 import React, {useEffect} from "react";
 import Image from "next/image";
+import ToolBox from "@/app/_components/ToolBox";
 
 export interface NavigationItem {
     titleZh: string
@@ -23,7 +24,7 @@ interface NavigationBarProps {
     setViewIndex: React.Dispatch<React.SetStateAction<number>>
 }
 
-export default function NavigationBar({viewIndex, setViewIndex}: NavigationBarProps) {
+export default function Header({viewIndex, setViewIndex}: NavigationBarProps) {
     useEffect(() => {
         const handleHashChange = (hce: HashChangeEvent) => {
             const newHash = hce.newURL.split("#")[1]
@@ -42,22 +43,25 @@ export default function NavigationBar({viewIndex, setViewIndex}: NavigationBarPr
         location.hash = "#" + NavigationList[viewIndex].titleEn.toLowerCase()
     }, [viewIndex])
 
-    return <nav className="w-full h-[6.75rem] absolute top-0 left-0 z-[23] flex items-center" style={{
+    return <header className="w-full h-[6.75rem] absolute top-0 left-0 z-[23] flex items-center" style={{
         backgroundImage: "linear-gradient(0deg, transparent, rgba(0, 0, 0, .6), rgba(0, 0, 0, .8))"
     }}>
         <a className="mx-10" href="/" style={{width: "12rem", marginLeft: "3rem", marginRight: "auto"}}>
             <Image width={180} height={60} src="/next.svg" alt="next"/>
         </a>
-        <ul className="flex justify-evenly">{
-            NavigationList.map((item: NavigationItem, index) => {
-                return <li key={index}
-                           className={`inline-block text-center mx-10 duration-300 hover:text-ark-blue ${viewIndex == index ? "text-ark-blue" : ""}`}>
-                    <a href={item.href} className="text-left">
-                        <div className={oswald_medium.className} style={{fontSize: "1.375rem"}}>{item.titleEn}</div>
-                        <div style={{fontSize: "0.875rem"}}>{item.titleZh}</div>
-                    </a>
-                </li>
-            })
-        }</ul>
-    </nav>
+        <nav className="portrait:hidden">
+            <ul className="flex justify-evenly">{
+                NavigationList.map((item: NavigationItem, index) => {
+                    return <li key={index}
+                               className={`inline-block text-center mx-10 duration-300 hover:text-ark-blue ${viewIndex == index ? "text-ark-blue" : ""}`}>
+                        <a href={item.href} className="text-left">
+                            <div className={oswald_medium.className} style={{fontSize: "1.375rem"}}>{item.titleEn}</div>
+                            <div style={{fontSize: "0.875rem"}}>{item.titleZh}</div>
+                        </a>
+                    </li>
+                })
+            }</ul>
+        </nav>
+        <ToolBox/>
+    </header>
 }
