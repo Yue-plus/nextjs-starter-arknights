@@ -39,7 +39,7 @@ function Person() {
     </div>
 }
 
-export default function ToolBox() {
+export default function NavTools() {
     return <div className="w-[14.75rem] h-full flex pl-[.75rem]">
         <Social/>
         <Sound/>

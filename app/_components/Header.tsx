@@ -1,8 +1,8 @@
 "use client"
 import {oswald_medium} from "@/app/fonts";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
-import ToolBox from "@/app/_components/ToolBox";
+import NavTools from "@/app/_components/NavTools";
 import NavMenu from "@/app/_components/NavMenu";
 
 export interface NavigationItem {
@@ -43,7 +43,7 @@ export default function Header({viewIndex, setViewIndex}: NavigationBarProps) {
     useEffect(() => {
         location.hash = "#" + NavigationList[viewIndex].titleEn.toLowerCase()
     }, [viewIndex])
-    const className: React.ComponentProps<"div">["className"] = ""
+
     return <header className="w-full h-[6.75rem] portrait:h-[9.375rem] absolute top-0 left-0 z-[23] flex items-center"
                    style={{backgroundImage: "linear-gradient(0deg, transparent, rgba(0, 0, 0, .6), rgba(0, 0, 0, .8))"}}>
         <a className="mx-10" href="/" style={{width: "12rem", marginLeft: "3rem", marginRight: "auto"}}>
@@ -62,7 +62,7 @@ export default function Header({viewIndex, setViewIndex}: NavigationBarProps) {
                 })
             }</ul>
         </nav>
-        <ToolBox/>
+        <NavTools/>
         <NavMenu/>
     </header>
 }
