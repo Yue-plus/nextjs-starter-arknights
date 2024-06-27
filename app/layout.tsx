@@ -2,6 +2,7 @@ import React from "react";
 import type {Metadata} from "next";
 import "./globals.css";
 import {inter} from "@/app/fonts";
+import {SvgDefs} from "@/app/_components/SvgIcons";
 
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({children}: Readonly<{
             <div className="w-full h-full relative bg-[url('/media/bg.jpg')] bg-center bg-cover bg-no-repeat">
                 {children}
             </div>
+            <SvgDefs />
         </body>
     </html>
 }
