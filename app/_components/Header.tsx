@@ -21,11 +21,11 @@ export const NavigationList: NavigationItem[] = [
 ]
 
 interface NavigationBarProps {
-    viewIndex: number
-    setViewIndex: React.Dispatch<React.SetStateAction<number>>
+    viewIndexState: [number, React.Dispatch<React.SetStateAction<number>>]
+    navMenuState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 }
 
-export default function Header({viewIndex, setViewIndex}: NavigationBarProps) {
+export default function Header({viewIndexState: [viewIndex, setViewIndex], navMenuState}: NavigationBarProps) {
     useEffect(() => {
         const handleHashChange = (hce: HashChangeEvent) => {
             const newHash = hce.newURL.split("#")[1]
@@ -63,6 +63,6 @@ export default function Header({viewIndex, setViewIndex}: NavigationBarProps) {
             }</ul>
         </nav>
         <NavTools/>
-        <NavMenu/>
+        <NavMenu state={navMenuState}/>
     </header>
 }

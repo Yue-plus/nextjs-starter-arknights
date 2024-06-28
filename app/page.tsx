@@ -1,6 +1,7 @@
 "use client"
 import React, {useEffect, useState} from "react";
 import Header, {NavigationList} from "@/app/_components/Header";
+import {Menu} from "@/app/_components/NavMenu";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
@@ -71,10 +72,11 @@ export default function Root() {
         return () => window.removeEventListener("resize", handleWindowResize)
     }, []);
 
-    const [viewIndex, setViewIndex] = useState(0)
+    const viewIndexState = useState(0)
 
     // 监听鼠标滚轮修改页面锚点链接
     useEffect(() => {
+        const [viewIndex, setViewIndex] = viewIndexState;
         let lastScrollTime = 0;
         const handleScroll = (event: WheelEvent) => {
             if (performance.now() - lastScrollTime > 1000) {
@@ -90,10 +92,12 @@ export default function Root() {
         }
         window.addEventListener("wheel", handleScroll);
         return () => window.removeEventListener("wheel", handleScroll);
-    }, []);
+    }, [viewIndexState]);
+
+    const navMenuState = useState(true)
 
     return <div className="relative w-full h-full m-auto max-w-[180rem]">
-        <Header {...{viewIndex, setViewIndex}} />
+        <Header {...{viewIndexState, navMenuState}} />
         <main className="w-full h-full relative select-none">
             <Index/>
             <Information/>
@@ -102,5 +106,6 @@ export default function Root() {
             <Media/>
             <More/>
         </main>
+        <Menu viewIndex={viewIndexState[0]} state={navMenuState} />
     </div>
 }
