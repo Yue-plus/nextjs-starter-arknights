@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from "react";
 import Header, {NavigationList} from "@/app/_components/Header";
 import {Menu} from "@/app/_components/NavMenu";
+import ToolBox from "@/app/_components/ToolBox";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
@@ -47,21 +48,13 @@ export default function Root() {
             let fontSize = 16
 
             if (innerHeight > innerWidth) {
-                const designWidth = 750;
-                const designHeight = 1334;
-                if (innerWidth / innerHeight > designWidth / designHeight) {
-                    fontSize *= innerHeight / designHeight
-                } else {
-                    fontSize *= innerWidth / designWidth
-                }
+                const designWidth = 750, designHeight = 1334;
+                if (innerWidth / innerHeight > designWidth / designHeight) fontSize *= innerHeight / designHeight
+                else fontSize *= innerWidth / designWidth
             } else {
-                const designWidth = 1920;
-                const designHeight = 1080;
-                if (innerWidth / innerHeight > designWidth / designHeight) {
-                    fontSize *= innerHeight / designHeight;
-                } else {
-                    fontSize *= innerWidth / designWidth;
-                }
+                const designWidth = 1920, designHeight = 1080;
+                if (innerWidth / innerHeight > designWidth / designHeight) fontSize *= innerHeight / designHeight
+                else fontSize *= innerWidth / designWidth
             }
 
             document.documentElement.style.fontSize = fontSize + "px"
@@ -94,9 +87,10 @@ export default function Root() {
     }, []);
 
     const navMenuState = useState(false)
+    const socialToolState = useState(true)
 
     return <div className="relative w-full h-full m-auto max-w-[180rem]">
-        <Header viewIndexState={[viewIndex, setViewIndex]} {...{navMenuState}} />
+        <Header viewIndexState={[viewIndex, setViewIndex]} {...{navMenuState, socialToolState}} />
         <main className="w-full h-full relative select-none">
             <Index/>
             <Information/>
@@ -106,5 +100,6 @@ export default function Root() {
             <More/>
         </main>
         <Menu state={navMenuState} {...{viewIndex}}/>
+        <ToolBox state={socialToolState}/>
     </div>
 }

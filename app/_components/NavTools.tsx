@@ -8,14 +8,17 @@ const BoxClassName: React.ComponentProps<"div">["className"] =
     "h-4/5 m-auto relative flex flex-auto items-center justify-center cursor-pointer transition duration-300"
 const SvgClassName: React.ComponentProps<"svg">["className"] = "w-auto h-[2.25rem] pointer-events-none"
 
-function Social() {
-    const [active, setActive] = useState(false)
+interface NavToolProps {
+    state: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+}
+
+export function Social({state: [active, setActive]}: NavToolProps) {
     return <div className={BoxClassName} onClick={_ => setActive(!active)}>
         <IconSocial className={SvgClassName} style={{color: active ? ActiveColor : InactiveColor}}/>
     </div>
 }
 
-function Sound() {
+export function Sound() {
     const [active, setActive] = useState(false)
     return <div className={BoxClassName} onClick={_ => setActive(!active)}>
         <IconSound className={SvgClassName} style={{
@@ -26,17 +29,9 @@ function Sound() {
     </div>
 }
 
-function Person() {
+export function Person() {
     const [active, setActive] = useState(false)
     return <div className={BoxClassName} onClick={_ => setActive(!active)}>
         <IconUser className={SvgClassName} style={{color: active ? ActiveColor : InactiveColor}}/>
-    </div>
-}
-
-export default function NavTools() {
-    return <div className="w-[14.75rem] h-full flex pl-[.75rem]">
-        <Social/>
-        <Sound/>
-        <Person/>
     </div>
 }

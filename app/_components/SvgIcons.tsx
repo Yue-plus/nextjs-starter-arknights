@@ -83,7 +83,7 @@ export function SvgDefs() {
     </svg>
 }
 
-interface SvgIconProps {
+export interface SvgIconProps {
     className?: React.ComponentProps<"svg">["className"]
     style?: React.CSSProperties
 }

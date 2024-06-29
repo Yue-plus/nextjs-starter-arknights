@@ -2,7 +2,7 @@
 import {oswald_medium} from "@/app/fonts";
 import React, {useEffect, useState} from "react";
 import Image from "next/image";
-import NavTools from "@/app/_components/NavTools";
+import {Person, Social, Sound} from "@/app/_components/NavTools";
 import NavMenu from "@/app/_components/NavMenu";
 
 export interface NavigationItem {
@@ -23,9 +23,10 @@ export const NavigationList: NavigationItem[] = [
 interface NavigationBarProps {
     viewIndexState: [number, React.Dispatch<React.SetStateAction<number>>]
     navMenuState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    socialToolState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 }
 
-export default function Header({viewIndexState: [viewIndex, setViewIndex], navMenuState}: NavigationBarProps) {
+export default function Header({viewIndexState: [viewIndex, setViewIndex], navMenuState, socialToolState}: NavigationBarProps) {
     useEffect(() => {
         const handleHashChange = (hce: HashChangeEvent) => {
             const newHash = hce.newURL.split("#")[1]
@@ -62,7 +63,11 @@ export default function Header({viewIndexState: [viewIndex, setViewIndex], navMe
                 })
             }</ul>
         </nav>
-        <NavTools/>
+        <div className="w-[14.75rem] h-full flex pl-[.75rem]">
+            <Social state={socialToolState}/>
+            <Sound/>
+            <Person/>
+        </div>
         <NavMenu state={navMenuState}/>
     </header>
 }

@@ -11,6 +11,7 @@ const config: Config = {
     colors: {
       "ark-blue": "#18d1ff",
       "end-yellow": "#ffee22",
+      "transparent": colors.transparent,
       "black": colors.black,
       "white": colors.white,
     },
