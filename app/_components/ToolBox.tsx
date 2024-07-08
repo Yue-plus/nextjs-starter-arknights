@@ -30,9 +30,9 @@ interface ToolBoxProps {
 
 export default function ToolBox({state: [opened, setOpened]}: ToolBoxProps) {
     return <div className="w-full h-full absolute top-0 left-0 z-[24] overflow-hidden transition duration-300"
-                style={{opacity: opened ? 1 : 0, visibility: opened ? "visible" : "hidden"}}
-                onClick={() => setOpened(!opened)}>
-        <div className="w-full h-full absolute top-0 left-0 portrait:bg-black portrait:opacity-70"></div>
+                style={{opacity: opened ? 1 : 0, visibility: opened ? "visible" : "hidden"}}>
+        <div className="w-full h-full absolute top-0 left-0 portrait:bg-black portrait:opacity-70 transition duration-300"
+             onClick={() => setOpened(!opened)}/>
         <div className={`w-[14.75rem] portrait:w-[32.5rem] portrait:h-[50rem] bg-ark-blue portrait:pt-[12.5rem]
                          absolute top-[6.75rem] portrait:top-1/2 right-0 portrait:left-1/2
                          transition duration-300
@@ -43,9 +43,12 @@ export default function ToolBox({state: [opened, setOpened]}: ToolBoxProps) {
             </div>
             <div className={`w-[4.5rem] h-[4.5rem] mt-[.5rem] text-white
                              absolute right-0 top-0 transition duration-300 cursor-pointer
-                             hidden portrait:block`}>
-                <div className="w-[.25rem] h-4/5 bg-white absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
-                <div className="w-[.25rem] h-4/5 bg-white absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
+                             hidden portrait:block`}
+                 onClick={() => setOpened(!opened)}>
+                <div
+                    className="w-[.25rem] h-4/5 bg-white absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45"/>
+                <div
+                    className="w-[.25rem] h-4/5 bg-white absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45"/>
             </div>
             <IconSocial
                 className="w-[3rem] h-auto absolute left-[3.5rem] top-[7.5rem] pointer-events-none hidden portrait:block"/>
