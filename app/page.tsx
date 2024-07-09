@@ -91,7 +91,7 @@ export default function Root() {
     const socialToolState = useState(true)
 
     return <div className="relative w-full h-full m-auto max-w-[180rem]">
-        <PageTracker />
+        <PageTracker {...{viewIndex}} />
         <Header viewIndexState={[viewIndex, setViewIndex]} {...{navMenuState, socialToolState}} />
         <main className="w-full h-full relative select-none">
             <Index/>
