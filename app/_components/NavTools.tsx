@@ -29,8 +29,7 @@ export function Sound() {
     </div>
 }
 
-export function Person() {
-    const [active, setActive] = useState(false)
+export function Person({state: [active, setActive]}: NavToolProps) {
     return <div className={BoxClassName} onClick={_ => setActive(!active)}>
         <IconUser className={SvgClassName} style={{color: active ? ActiveColor : InactiveColor}}/>
     </div>

@@ -24,9 +24,15 @@ interface NavigationBarProps {
     viewIndexState: [number, React.Dispatch<React.SetStateAction<number>>]
     navMenuState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
     socialToolState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    personInfoState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 }
 
-export default function Header({viewIndexState: [viewIndex, setViewIndex], navMenuState, socialToolState}: NavigationBarProps) {
+export default function Header({
+                                   viewIndexState: [viewIndex, setViewIndex],
+                                   navMenuState,
+                                   socialToolState,
+                                   personInfoState
+                               }: NavigationBarProps) {
     useEffect(() => {
         const handleHashChange = (hce: HashChangeEvent) => {
             const newHash = hce.newURL.split("#")[1]
@@ -66,7 +72,7 @@ export default function Header({viewIndexState: [viewIndex, setViewIndex], navMe
         <div className="w-[14.75rem] h-full flex pl-[.75rem]">
             <Social state={socialToolState}/>
             <Sound/>
-            <Person/>
+            <Person state={personInfoState}/>
         </div>
         <NavMenu state={navMenuState}/>
     </header>

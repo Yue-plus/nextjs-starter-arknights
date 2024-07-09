@@ -4,6 +4,8 @@ import Header, {NavigationList} from "@/app/_components/Header";
 import {Menu} from "@/app/_components/NavMenu";
 import ToolBox from "@/app/_components/ToolBox";
 import PageTracker from "@/app/_components/PageTracker";
+import PersonInfo from "@/app/_components/PersonInfo";
+import {tree} from "next/dist/build/templates/app-page";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
@@ -88,11 +90,12 @@ export default function Root() {
     }, []);
 
     const navMenuState = useState(false)
-    const socialToolState = useState(true)
+    const socialToolState = useState(false)
+    const personInfoState = useState(true)
 
     return <div className="relative w-full h-full m-auto max-w-[180rem]">
         <PageTracker {...{viewIndex}} />
-        <Header viewIndexState={[viewIndex, setViewIndex]} {...{navMenuState, socialToolState}} />
+        <Header viewIndexState={[viewIndex, setViewIndex]} {...{navMenuState, socialToolState, personInfoState}} />
         <main className="w-full h-full relative select-none">
             <Index/>
             <Information/>
@@ -103,5 +106,6 @@ export default function Root() {
         </main>
         <Menu state={navMenuState} {...{viewIndex}}/>
         <ToolBox state={socialToolState}/>
+        <PersonInfo state={personInfoState} />
     </div>
 }

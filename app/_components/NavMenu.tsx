@@ -11,9 +11,9 @@ const LineClassName: React.ComponentProps<"div">["className"] =
     "w-full h-[2px] bg-white absolute left-1/2 transition duration-300"
 
 export default function NavMenu({state: [active, setActive]}: NavMenuProps) {
-    return <div className="w-[5.75rem] h-full landscape:hidden portrait:flex">
-        <div className="w-[2.625rem] h-[2.375rem] m-auto relative"
-             onClick={() => setActive(!active)}>
+    return <div className="w-[5.75rem] h-full landscape:hidden portrait:flex"
+                onClick={() => setActive(!active)}>
+        <div className="w-[2.625rem] h-[2.375rem] m-auto relative">
             <div className={LineClassName} style={{
                 top: active ? "1.1875rem" : "1px",
                 transform: `translate(-50%, -50%) ${active ? "rotate(45deg) scaleX(1.2)" : ""}`,
