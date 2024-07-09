@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import Header, {NavigationList} from "@/app/_components/Header";
 import {Menu} from "@/app/_components/NavMenu";
 import ToolBox from "@/app/_components/ToolBox";
+import PageTracker from "@/app/_components/PageTracker";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
@@ -90,6 +91,7 @@ export default function Root() {
     const socialToolState = useState(true)
 
     return <div className="relative w-full h-full m-auto max-w-[180rem]">
+        <PageTracker />
         <Header viewIndexState={[viewIndex, setViewIndex]} {...{navMenuState, socialToolState}} />
         <main className="w-full h-full relative select-none">
             <Index/>
