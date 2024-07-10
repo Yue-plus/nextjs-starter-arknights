@@ -1,34 +1,17 @@
 import React from "react";
 import {
     IconBiliBili,
-    IconSkland, IconSocial,
+    IconSkland,
+    IconSocial,
     IconTapTap,
     IconWechat,
     IconWeibo,
-    LogoRhodesIsland,
-    SvgIconProps
+    LogoRhodesIsland
 } from "@/app/_components/SvgIcons";
 
-interface SocialLinkItem {
-    icon: (props: SvgIconProps) => React.ReactElement
-    nameEn: string
-    nameZh?: string
-    url: string
-}
-
-export const SocialLinks: SocialLinkItem[] = [
-    {icon: IconSkland, nameEn: "Skland", nameZh: "森空岛", url: ""},
-    {icon: IconBiliBili, nameEn: "bilibili", nameZh: "哔哩哔哩", url: ""},
-    {icon: IconWechat, nameEn: "WeChat", nameZh: "微信", url: ""},
-    {icon: IconWeibo, nameEn: "Weibo", nameZh: "微博", url: ""},
-    {icon: IconTapTap, nameEn: "TapTap", url: ""},
-]
-
-interface ToolBoxProps {
+export default function ToolBox({state: [opened, setOpened]}: {
     state: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
-}
-
-export default function ToolBox({state: [opened, setOpened]}: ToolBoxProps) {
+}) {
     return <div className="w-full h-full absolute top-0 left-0 z-[24] overflow-hidden transition duration-300"
                 style={{opacity: opened ? 1 : 0, visibility: opened ? "visible" : "hidden"}}>
         <div className="w-full h-full absolute top-0 left-0 portrait:bg-black portrait:opacity-70 transition duration-300"

@@ -13,6 +13,7 @@ const config: Config = {
       "end-yellow": "#ffee22",
       "transparent": colors.transparent,
       "current": colors.current,
+      "inherit": colors.inherit,
       "black": colors.black,
       "white": colors.white,
     },

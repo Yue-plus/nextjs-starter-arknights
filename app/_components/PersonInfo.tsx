@@ -1,5 +1,13 @@
 import React from "react";
-import {IconArrow, LogoRhodesIsland} from "@/app/_components/SvgIcons";
+import {
+    IconArrow,
+    IconBiliBili,
+    IconSkland,
+    IconTapTap,
+    IconWechat,
+    IconWeibo,
+    LogoRhodesIsland
+} from "@/app/_components/SvgIcons";
 
 function Divider({children, portraitHidden}: {
     children: React.ReactNode
@@ -31,6 +39,28 @@ function Welcome() {
                     + " ml-[2.875rem] portrait:ml-[8rem] mt-[.25rem] font-bold"}>Please login.</div>
                 <div className={"text-[1rem] portrait:text-[1.625rem]"
                     + " ml-[2.875rem] portrait:ml-[8rem]"}>请先登入您的账号。</div>
+            </div>
+        </div>
+    </>
+}
+
+function ToolBox() {
+    const aClassName: string = "text-inherit no-underline decoration-0 cursor-pointer flex-1"
+        + " opacity-70 transition-opacity duration-300"
+    const iconClassName: string = "h-auto m-auto pointer-events-none"
+
+    return <>
+        <Divider portraitHidden>TOOLBOX</Divider>
+        <div className={"mt-[2rem] pl-[1rem] portrait:hidden"}>
+            <div className={"flex items-center justify-between"}>
+                <a className={aClassName}><IconSkland className={"w-[2rem] " + iconClassName}/></a>
+                <a className={aClassName}><IconBiliBili className={"w-[3rem] " + iconClassName}/></a>
+                <a className={aClassName}><IconWechat className={"w-[2rem] " + iconClassName}/></a>
+            </div>
+            <div className={"flex items-center justify-between mt-[.5rem]"}>
+                <a className={aClassName}><IconWeibo className={"w-[2rem] " + iconClassName}/></a>
+                <a className={aClassName}><IconTapTap className={"w-[3rem] " + iconClassName}/></a>
+                <a className={"flex-1"}/>
             </div>
         </div>
     </>
@@ -81,7 +111,7 @@ export default function PersonInfo({state: [opened, setOpened]}: {
             </div>
             <div className="relative pt-[5.875rem] portrait:pt-[2rem]">
                 <Welcome/>
-                <Divider portraitHidden>TOOLBOX</Divider>
+                <ToolBox/>
             </div>
             <div className={"w-full absolute left-0 bottom-0 portrait:static portrait:mb-[3.75rem]"}>
                 <div className={"relative portrait:static pl-[2.5rem] pr-[1.25rem]"
