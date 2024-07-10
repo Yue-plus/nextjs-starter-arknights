@@ -15,7 +15,7 @@ export default function ToolBox({state: [opened, setOpened]}: {
     const aClassName: string = "w-[3.375rem] portrait:w-[6.375rem] h-[3.375rem] portrait:h-[6.375rem] text-white"
         + " bg-black transition duration-300 portrait:border portrait:border-solid portrait:border-white flex flex-none"
         + " rounded-lg portrait:rounded-2xl cursor-pointer"
-    const iconClassName: string = " portrait:w-[4rem] h-auto m-auto pointer-events-none block"
+    const iconClassName: string = "h-auto m-auto pointer-events-none block"
     return <div className="w-full h-full absolute top-0 left-0 z-[24] overflow-hidden transition duration-300"
                 style={{opacity: opened ? 1 : 0, visibility: opened ? "visible" : "hidden"}}>
         <div className="w-full h-full absolute top-0 left-0 portrait:bg-black portrait:opacity-70 transition duration-300"
@@ -49,18 +49,24 @@ export default function ToolBox({state: [opened, setOpened]}: {
                      style={{fontFamily: "Bender-Bold"}}>
                     TOOLBOX<span className="ml-[1em] flex-auto h-px bg-white"></span>
                 </div>
-                <div className="mt-[1rem] portrait:mt-[3.5rem] portrait:p-0 px-[3rem]">
-                    <div className="flex items-center justify-between">
-                        <a className={aClassName}><IconSkland className={"w-[2rem] " + iconClassName}/></a>
-                        <a className={aClassName}><IconBiliBili className={"w-[2.75rem]" + iconClassName}/></a>
-                    </div>
-                    <div className="mt-[1.75rem] flex items-center justify-between">
-                        <a className={aClassName}><IconWechat className={"w-[2rem] " + iconClassName}/></a>
-                        <a className={aClassName}><IconWeibo className={"w-[2rem] " + iconClassName}/></a>
-                    </div>
-                    <div className="mt-[1.75rem] flex items-center justify-between">
-                        <a className={aClassName}><IconTapTap className={"w-[3rem] " + iconClassName}/></a>
-                    </div>
+                <div className={"mt-[1rem] portrait:mt-[3.5rem] px-[3rem] portrait:p-0"
+                    + " grid grid-cols-2 portrait:grid-cols-3 gap-[1.75rem]"
+                    + " portrait:gap-x-[3.32rem] portrait:gap-y-[2rem] justify-items-center"}>
+                    <a className={aClassName}>
+                        <IconSkland className={"w-[2rem]  portrait:w-[4rem] " + iconClassName}/>
+                    </a>
+                    <a className={aClassName}>
+                        <IconBiliBili className={"w-[2.75rem] portrait:w-[5rem] " + iconClassName}/>
+                    </a>
+                    <a className={aClassName}>
+                        <IconWechat className={"w-[2rem]  portrait:w-[4rem] " + iconClassName}/>
+                    </a>
+                    <a className={aClassName}>
+                        <IconWeibo className={"w-[2rem]  portrait:w-[4rem] " + iconClassName}/>
+                    </a>
+                    <a className={aClassName}>
+                        <IconTapTap className={"w-[3rem]  portrait:w-[6rem] " + iconClassName}/>
+                    </a>
                 </div>
             </div>
         </div>

@@ -91,7 +91,7 @@ export default function Root() {
 
     const navMenuState = useState(false)
     const socialToolState = useState(false)
-    const personInfoState = useState(true)
+    const personInfoState = useState(false)
 
     return <div className="relative w-full h-full m-auto max-w-[180rem]">
         <PageTracker {...{viewIndex}} />
