@@ -1,5 +1,5 @@
 "use client"
-import React, {useState} from "react";
+import React from "react";
 import {NavigationList} from "@/app/_components/Header";
 import {oswald_medium} from "@/app/fonts"
 
@@ -30,38 +30,45 @@ export default function NavMenu({state: [active, setActive]}: NavMenuProps) {
     </div>
 }
 
-interface MenuProps {
+function Navigation({viewIndex, state: [active, setActive]}: {
     viewIndex: number
     state: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+}) {
+    let delay = -70
+    return <div className="pt-[1.25rem] pr-[2.25rem] pb-0 pl-[3.375rem]">{
+        NavigationList.map((item, index) => {
+            delay += 70
+            return <a key={index} href={item.href} onClick={() => {setActive(false)}}
+                      className={"h-[7.5rem] flex items-center justify-between transition ease-in-out duration-200"}
+                      style={{
+                          color: viewIndex === index ? "#19d1ff" : "inherit",
+                          borderBottom: "1px solid hsla(0, 0%, 100%, .3)",
+                          transitionDelay: delay + "ms",
+                          opacity: active ? 1 : 0,
+                          transform: `translateX(${active ? "0" : "20%"})`,
+                      }}>
+                <div className={`transition duration-300 text-4xl ${oswald_medium.className}`}>
+                    {item.titleEn}
+                </div>
+                <div className="h-full text-[1.75rem] relative flex items-center transition duration-300">
+                    {item.titleZh}
+                    <div className="w-full h-[.375rem] absolute right-0 bottom-[-.1875rem] bg-[currentColor]"></div>
+                </div>
+            </a>
+        })
+    }</div>
 }
 
-export function Menu({viewIndex, state: [active, setActive]}: MenuProps) {
-    let delay = 0
-    return <div
-        className="w-full h-full absolute top-0 left-0 z-[22] overflow-hidden bg-black bg-opacity-90 transition duration-600"
-        style={{
-            opacity: active ? 1 : 0,
-            visibility: active ? "visible" : "hidden",
-        }}>
+export function Menu({viewIndex, state: [active, setActive]}: {
+    viewIndex: number
+    state: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+}) {
+    return <div className={"w-full h-full absolute top-0 left-0 z-[22] overflow-hidden bg-black bg-opacity-90"
+        + " transition-[opacity,visibility] ease-in-out duration-[600ms]"}
+                style={{opacity: active ? 1 : 0, visibility: active ? "visible" : "hidden"}}>
         <div className="w-full h-px absolute left-0 top-[9.375rem] bg-[#4f4f4f]"></div>
         <div className="w-full h-full pt-[9.375rem] pr-[5.75rem] flex flex-col">
-            <div className="pt-[1.25rem] pr-[2.25rem] pb-0 pl-[3.375rem]">{
-                NavigationList.map((item, index) => {
-                    return <a key={index} className="h-[7.5rem] flex items-center justify-between"
-                              style={{
-                                  color: viewIndex === index ? "#19d1ff" : "inherit",
-                                  borderBottom: "1px solid hsla(0, 0%, 100%, .3)"
-                    }}>
-                        <div className={`transition duration-300 text-4xl ${oswald_medium.className}`}>
-                            {item.titleEn}
-                        </div>
-                        <div className="h-full text-[1.75rem] relative flex items-center transition duration-300">
-                            {item.titleZh}
-                            <div className="w-full h-[.375rem] absolute right-0 bottom-[-.1875rem] bg-[currentColor]"></div>
-                        </div>
-                    </a>
-                })
-            }</div>
+            <Navigation {...{viewIndex}} state={[active, setActive]} />
         </div>
         <div className="w-px h-full absolute top-0 right-[5.75rem] bg-[#4f4f4f]"></div>
     </div>

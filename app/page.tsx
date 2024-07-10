@@ -5,7 +5,6 @@ import {Menu} from "@/app/_components/NavMenu";
 import ToolBox from "@/app/_components/ToolBox";
 import PageTracker from "@/app/_components/PageTracker";
 import PersonInfo from "@/app/_components/PersonInfo";
-import {tree} from "next/dist/build/templates/app-page";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
