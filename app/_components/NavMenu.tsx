@@ -2,6 +2,7 @@
 import React from "react";
 import {NavigationList} from "@/app/_components/Header";
 import {oswald_medium} from "@/app/fonts"
+import {IconBiliBili, IconSkland, IconTapTap, IconWechat, IconWeibo} from "@/app/_components/SvgIcons";
 
 interface NavMenuProps {
     state: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
@@ -59,6 +60,24 @@ function Navigation({viewIndex, state: [active, setActive]}: {
     }</div>
 }
 
+function ToolBox() {
+    const aClassName: string = "text-inherit flex-none cursor-pointer"
+    const iconClassName: string = "h-auto m-auto pointer-events-none"
+    return <div className={"mt-auto pr-9 pb-[4.5rem] pl-[3.375rem]"}>
+        <div className={"text-[1.5rem] flex items-center"}>
+            <div className={"w-full min-w-0 h-px mr-4 flex-auto"} style={{backgroundColor: "hsla(0, 0%, 100%, .3)"}}/>
+            TOOLBOX
+        </div>
+        <div className={"mt-4 flex items-center justify-between"}>
+            <a className={aClassName}><IconSkland className={"w-[4.5rem] " + iconClassName} /></a>
+            <a className={aClassName}><IconBiliBili className={"w-[4.5rem] " + iconClassName}/></a>
+            <a className={aClassName}><IconWechat className={"w-[3rem] " + iconClassName}/></a>
+            <a className={aClassName}><IconWeibo className={"w-[3rem] " + iconClassName}/></a>
+            <a className={aClassName}><IconTapTap className={"w-[4.5rem] " + iconClassName}/></a>
+        </div>
+    </div>
+}
+
 export function Menu({viewIndex, state: [active, setActive]}: {
     viewIndex: number
     state: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
@@ -68,7 +87,8 @@ export function Menu({viewIndex, state: [active, setActive]}: {
                 style={{opacity: active ? 1 : 0, visibility: active ? "visible" : "hidden"}}>
         <div className="w-full h-px absolute left-0 top-[9.375rem] bg-[#4f4f4f]"></div>
         <div className="w-full h-full pt-[9.375rem] pr-[5.75rem] flex flex-col">
-            <Navigation {...{viewIndex}} state={[active, setActive]} />
+            <Navigation {...{viewIndex}} state={[active, setActive]}/>
+            <ToolBox/>
         </div>
         <div className="w-px h-full absolute top-0 right-[5.75rem] bg-[#4f4f4f]"></div>
     </div>
