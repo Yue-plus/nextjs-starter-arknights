@@ -21,7 +21,7 @@ export default function PageTracker({viewIndex}: PageTrackerProps) {
             + " text-right text-[.375rem] tracking-[.5em] portrait:hidden"}
         >ARKNIGHTS</div>
         <div className={novecentosanswide_demiBold.className
-            + " text-right portrait:text-center text-[1.125rem] portrait:text-[.6.25rem] tracking-widest"
+            + " text-right portrait:text-center text-[1.125rem] portrait:text-[.625rem] tracking-widest"
             + " portrait:absolute portrait:right-[1.5rem] portrait:bottom-0 portrait:writing-rl"}
         >{["HOMEPAGE", "INFORMATION", "OPERATOR", "WORLD", "ABOUT TERRA", "MORE"][viewIndex]}</div>
     </div>
