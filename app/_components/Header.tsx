@@ -1,6 +1,6 @@
 "use client"
-import {oswald_medium} from "@/app/fonts";
-import React, {useEffect, useState} from "react";
+import {oswald_medium} from "@/app/fonts/fonts";
+import React, {useEffect} from "react";
 import Image from "next/image";
 import {Person, Social, Sound} from "@/app/_components/NavTools";
 import NavMenu from "@/app/_components/NavMenu";
@@ -20,19 +20,17 @@ export const NavigationList: NavigationItem[] = [
     {titleEn: "MORE", titleZh: "更多内容", href: "/#more"},
 ]
 
-interface NavigationBarProps {
-    viewIndexState: [number, React.Dispatch<React.SetStateAction<number>>]
-    navMenuState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
-    socialToolState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
-    personInfoState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
-}
-
 export default function Header({
                                    viewIndexState: [viewIndex, setViewIndex],
                                    navMenuState,
                                    socialToolState,
-                                   personInfoState
-                               }: NavigationBarProps) {
+                                   personInfoState,
+                               }: {
+    viewIndexState: [number, React.Dispatch<React.SetStateAction<number>>]
+    navMenuState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    socialToolState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+    personInfoState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+}) {
     useEffect(() => {
         const handleHashChange = (hce: HashChangeEvent) => {
             const newHash = hce.newURL.split("#")[1]

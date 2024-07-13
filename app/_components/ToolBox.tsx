@@ -1,4 +1,5 @@
 import React from "react";
+import {bender_bold} from "@/app/fonts/fonts";
 import {
     IconBiliBili,
     IconSkland,
@@ -43,11 +44,10 @@ export default function ToolBox({state: [opened, setOpened]}: {
                              absolute bottom-full left-[2rem]
                              portrait:hidden`}></div>
             <div className="portrait:w-[25.75rem] relative pt-[2.625rem] portrait:pt-0 pb-[3rem] portrait:m-auto">
-                <div className={`mx-12 portrait:mr-0 portrait:ml-0
-                                 whitespace-nowrap text-[.75rem] portrait:text-[1.125rem]
-                                 flex items-center`}
-                     style={{fontFamily: "Bender-Bold"}}>
-                    TOOLBOX<span className="ml-[1em] flex-auto h-px bg-white"></span>
+                <div className={bender_bold.className + " mx-12 portrait:mr-0 portrait:ml-0 whitespace-nowrap"
+                    + " text-[.75rem] portrait:text-[1.125rem] flex items-center"}>
+                    TOOLBOX
+                    <span className="ml-[1em] flex-auto h-px bg-white"></span>
                 </div>
                 <div className={"mt-[1rem] portrait:mt-[3.5rem] px-[3rem] portrait:p-0"
                     + " grid grid-cols-2 portrait:grid-cols-3 gap-[1.75rem]"
