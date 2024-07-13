@@ -1,5 +1,5 @@
 "use client"
-import {oswald_medium} from "@/app/fonts/fonts";
+import {oswald_medium} from "@/app/_fonts/fonts";
 import React, {useEffect} from "react";
 import Image from "next/image";
 import {Person, Social, Sound} from "@/app/_components/NavTools";

@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import {NavigationList} from "@/app/_components/Header";
-import {oswald_medium} from "@/app/fonts/fonts"
+import {oswald_medium} from "@/app/_fonts/fonts"
 import {IconBiliBili, IconSkland, IconTapTap, IconWechat, IconWeibo} from "@/app/_components/SvgIcons";
 
 interface NavMenuProps {

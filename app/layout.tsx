@@ -1,7 +1,7 @@
 import React from "react";
 import type {Metadata} from "next";
 import "./globals.css";
-import {inter} from "@/app/fonts/fonts";
+import {inter} from "@/app/_fonts/fonts";
 import {SvgDefs} from "@/app/_components/SvgIcons";
 
 

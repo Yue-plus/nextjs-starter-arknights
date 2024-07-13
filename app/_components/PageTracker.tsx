@@ -1,4 +1,4 @@
-import {novecentosanswide_demiBold, bender_regular, novecentosanswide_medium} from "@/app/fonts/fonts";
+import {novecentosanswide_demiBold, bender_regular, novecentosanswide_medium} from "@/app/_fonts/fonts";
 
 interface PageTrackerProps {
     viewIndex: number

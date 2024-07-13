@@ -1,5 +1,5 @@
 import React from "react";
-import {bender_bold} from "@/app/fonts/fonts";
+import {bender_bold} from "@/app/_fonts/fonts";
 import {
     IconArrow,
     IconBiliBili,
