@@ -11,6 +11,8 @@ export default function Loading() {
     return <div className={"w-full h-full absolute top-0 left-0 z-[24] text-[#a4a4a4] bg-[#272727] pt-[8rem]"
         + " flex flex-col items-center justify-center transition-[opacity,visibility] duration-1000 ease-in-out"}>
         <TitleArknights className={"w-[15.875rem] h-auto pointer-events-none"} />
+        <div className={"w-full h-px bg-white opacity-30 absolute top-[6.625rem] left-0"
+            + " transition-[top] duration-1000 ease-in-out portrait:hidden"} />
         <div className={"mt-[20.125rem] flex items-end"}>
             <CopyrightMini className={"w-[10.5rem] portrait:w-[7.25rem] h-auto flex-none ml-auto mr-[18.125rem]"
                 + " portrait:absolute portrait:left-[2rem] portrait:bottom-[3rem] pointer-events-none"} />
@@ -38,5 +40,7 @@ export default function Loading() {
                 </div>
             </div>
         </div>
+        <div className={"w-px h-full bg-white opacity-30 absolute top-0 right-[6.625rem]"
+            + " transition-[right] duration-1000 ease-in-out portrait:hidden"} />
     </div>
 }

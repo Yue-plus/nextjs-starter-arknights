@@ -4,7 +4,6 @@ import "./globals.css";
 import {inter} from "@/app/_fonts/fonts";
 import {SvgDefs} from "@/app/_components/SvgIcons";
 
-
 export const metadata: Metadata = {
     title: "Arknights",
     description: "Arknights Next.js Theme Template Starter",
