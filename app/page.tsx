@@ -1,18 +1,13 @@
 "use client"
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Header, {NavigationList} from "@/app/_components/Header";
 import {Menu} from "@/app/_components/NavMenu";
 import ToolBox from "@/app/_components/ToolBox";
 import PageTracker from "@/app/_components/PageTracker";
 import PersonInfo from "@/app/_components/PersonInfo";
+import Index from "@/app/_pages/00-Index/00-Index";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
-
-function Index() {
-    return <div id="index" className={pageClassName} style={{width: "100%", left: 0, backgroundColor: "darkgreen"}}>
-        <h1 className="text-9xl absolute top-1/4 left-1/4">Index</h1>
-    </div>
-}
 
 function Information() {
     return <div id="information" className={pageClassName} style={{backgroundColor: "darkcyan"}}>
