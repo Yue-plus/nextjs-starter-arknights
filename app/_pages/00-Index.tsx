@@ -1,6 +1,7 @@
 import {novecentosanswide_medium, novecentosanswide_ultraBold} from "@/app/_fonts/fonts";
-import "./page.css"
+import PortraitBottomGradientMask from "@/app/_components/PortraitBottomGradientMask";
 import {CopyrightMini} from "@/app/_components/SvgIcons";
+import "./page.css"
 
 export default function Index() {
     // TODO: 添加动效
@@ -19,8 +20,7 @@ export default function Index() {
                 + " bg-[url('/media/mask_block.png')] portrait:bg-[url('/media/mask_block_m.png')]"
                 + " bg-[auto_110%] portrait:bg-[auto_100%] bg-no-repeat"
                 + " translate-x-[-14.75rem] portrait:translate-x-[-3.75rem]"}/>
-            <div className={"w-full h-[12rem] absolute left-0 bottom-0 hidden portrait:block"}
-                 style={{backgroundImage: "linear-gradient(0deg, #000, transparent)"}}/>
+            <PortraitBottomGradientMask />
             <div className={"absolute left-[4.5rem] portrait:left-[2rem] bottom-[2.75rem] portrait:bottom-[3rem]"
                 + " transition-transform duration-1000"}/>
             <div className={"absolute left-[4.5rem] portrait:left-[2rem] bottom-[2.75rem] portrait:bottom-[3rem]"

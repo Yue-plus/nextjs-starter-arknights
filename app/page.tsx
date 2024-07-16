@@ -1,20 +1,16 @@
 "use client"
 import React, {useEffect, useState} from "react";
+import {register as swiperRegister} from "swiper/element/bundle"
+import PageTracker from "@/app/_components/PageTracker";
 import Header, {NavigationList} from "@/app/_components/Header";
+import ScrollTip from "@/app/_components/ScrollTip";
 import {Menu} from "@/app/_components/NavMenu";
 import ToolBox from "@/app/_components/ToolBox";
-import PageTracker from "@/app/_components/PageTracker";
 import PersonInfo from "@/app/_components/PersonInfo";
 import Index from "@/app/_pages/00-Index";
-import ScrollTip from "@/app/_components/ScrollTip";
+import Information from "@/app/_pages/01-Information";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
-
-function Information() {
-    return <div id="information" className={pageClassName} style={{backgroundColor: "darkcyan"}}>
-        <h1 className="text-9xl absolute top-1/4 left-1/4">Information</h1>
-    </div>
-}
 
 function Operator() {
     return <div id="operator" className={pageClassName} style={{backgroundColor: "darkgrey"}}>
@@ -41,6 +37,9 @@ function More() {
 }
 
 export default function Root() {
+    // See: https://swiperjs.com/element
+    swiperRegister()
+
     const [viewIndex, setViewIndex] = useState(0)
 
     // 监听鼠标滚轮修改页面锚点链接
