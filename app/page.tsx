@@ -9,6 +9,7 @@ import ToolBox from "@/app/_components/ToolBox";
 import PersonInfo from "@/app/_components/PersonInfo";
 import Index from "@/app/_pages/00-Index";
 import Information from "@/app/_pages/01-Information";
+import LineDecorator from "@/app/_components/LineDecorator";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
@@ -76,6 +77,7 @@ export default function Root() {
             <Media/>
             <More/>
         </main>
+        <LineDecorator />
         <ScrollTip />
         <Menu state={navMenuState} {...{viewIndex}}/>
         <ToolBox state={socialToolState}/>
