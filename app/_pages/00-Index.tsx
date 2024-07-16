@@ -1,5 +1,5 @@
 import {novecentosanswide_medium, novecentosanswide_ultraBold} from "@/app/_fonts/fonts";
-import "../page.css"
+import "./page.css"
 import {CopyrightMini} from "@/app/_components/SvgIcons";
 
 export default function Index() {

@@ -1,11 +1,11 @@
 "use client"
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Header, {NavigationList} from "@/app/_components/Header";
 import {Menu} from "@/app/_components/NavMenu";
 import ToolBox from "@/app/_components/ToolBox";
 import PageTracker from "@/app/_components/PageTracker";
 import PersonInfo from "@/app/_components/PersonInfo";
-import Index from "@/app/_pages/00-Index/00-Index";
+import Index from "@/app/_pages/00-Index";
 import ScrollTip from "@/app/_components/ScrollTip";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
