@@ -23,6 +23,17 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        downHide: {
+          "0%": {opacity: "0", transform: "translateY(0)"},
+          "40%": {opacity: "1", transform: "translateY(0)"},
+          "80%": {opacity: "1"},
+          "100%": {opacity: "0", transform: "translateY(30%)"},
+        }
+      },
+      animation: {
+        downHide: "downHide 1.5s infinite",
+      },
     },
   },
   plugins: [],

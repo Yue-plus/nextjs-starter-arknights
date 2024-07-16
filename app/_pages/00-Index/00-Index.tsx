@@ -3,11 +3,13 @@ import "../page.css"
 import {CopyrightMini} from "@/app/_components/SvgIcons";
 
 export default function Index() {
+    // TODO: 添加动效
     return <div id="index" className="rootPage" style={{width: "100%", left: 0}}>
         <div className={"w-[100vw] w-max-[180rem] h-full absolute top-0 right-0 bottom-0 left-0 z-[2]"
             + " transition-opacity duration-100"}>
             <div className={"w-full h-full absolute top-0 left-0"
                 + " bg-[url('/media/index-bg.jpg')] bg-center bg-cover bg-no-repeat transition-opacity duration-1000"}/>
+            {/* TODO: <video> <canvas> */}
             <div className={"w-[52.5rem] portrait:w-[18.75rem] h-[60.75rem] portrait:h-[12rem] absolute left-0 bottom-0"
                 + " bg-[url('/media/mask_block.png')] portrait:bg-[url('/media/mask_block_m.png')]"
                 + " bg-[auto_110%] portrait:bg-[auto_100%] bg-[100%_0]"

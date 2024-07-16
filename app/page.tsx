@@ -6,6 +6,7 @@ import ToolBox from "@/app/_components/ToolBox";
 import PageTracker from "@/app/_components/PageTracker";
 import PersonInfo from "@/app/_components/PersonInfo";
 import Index from "@/app/_pages/00-Index/00-Index";
+import ScrollTip from "@/app/_components/ScrollTip";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
@@ -76,6 +77,7 @@ export default function Root() {
             <Media/>
             <More/>
         </main>
+        <ScrollTip />
         <Menu state={navMenuState} {...{viewIndex}}/>
         <ToolBox state={socialToolState}/>
         <PersonInfo state={personInfoState} />
