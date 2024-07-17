@@ -23,9 +23,10 @@ function BreakingNewsItem({tag, title, date}: {
     title: string,
     date: string,
 }) {
-    return<a href="" target="_blank" className={"w-[22.5rem] portrait:w-[unset] h-24 portrait:h-[7.125rem] text-inherit"
-        + " border-b-[1px] border-solid border-[#ffffff4d] portrait:border-[#403c3b] no-underline"
-        + " flex items-center cursor-pointer"}>
+    return <a href="" target="_blank"
+              className={"w-[22.5rem] portrait:w-[unset] h-24 portrait:h-[7.125rem] text-inherit"
+                  + " border-b-[1px] border-solid border-[#ffffff4d] portrait:border-[#403c3b] no-underline"
+                  + " flex items-center cursor-pointer"}>
         <div className={"text-[1.125rem] text-ark-blue whitespace-nowrap"}>{tag}</div>
         <div className={"w-[17.5rem] portrait:w-[unset] text-[d2d2d2] ml-auto portrait:ml-[2.75rem] portrait:flex-auto"
             + " portrait:flex portrait:flex-row-reverse portrait:justify-between portrait:items-center"}>
@@ -40,7 +41,7 @@ function BreakingNewsItem({tag, title, date}: {
 }
 
 export default function Information() {
-    return <div id="information" className="rootPage" style={{width: "100%", left: 0}}>
+    return <div id="information" className="rootPage">
         <div className={"w-[100vw] w-max-[180rem] h-full absolute top-0 right-0 bottom-0 left-auto"
             + " transition-opacity duration-100"}>
             <PortraitBottomGradientMask/>
@@ -51,15 +52,15 @@ export default function Information() {
                 <div className={"w-full h-full swiper swiper-horizontal swiper-backface-hidden"}>
                     {/* TODO: use SwiperJs */}
                 </div>
-                <div className={"w-[61rem] portrait:w-full h-[.5rem] portrait:h-[.375rem] portrait:pr-[5.75rem]"
-                    + " absolute portrait:flex top-[56.375rem] portrait:top-[33.125rem] right-0"
-                    + " z-[4] transition-[visibility,opacity] duration-1000"}>
-                    <div className={"w-[12rem] h-px absolute top-0 right-full portrait:hidden"} style={{
-                        backgroundImage: "linear-gradient(90deg, hsla(0, 0%, 67%, 0), hsla(0, 0%, 67%, .7))"
-                    }}/>
-                    <div className={"w-full h-full bg-[#ababab] duration-0 swiper-scrollbar-horizontal"}>
-                        {/* TODO: swiper-scrollbar-horizontal */}
-                    </div>
+            </div>
+            <div className={"w-[61rem] portrait:w-full h-[.5rem] portrait:h-[.375rem] portrait:pr-[5.75rem]"
+                + " absolute portrait:flex top-[56.375rem] portrait:top-[33.125rem] right-0"
+                + " z-[4] transition-[visibility,opacity] duration-1000"}>
+                <div className={"w-[12rem] h-px absolute top-0 right-full portrait:hidden"} style={{
+                    backgroundImage: "linear-gradient(90deg, hsla(0, 0%, 67%, 0), hsla(0, 0%, 67%, .7))"
+                }}/>
+                <div className={"w-full h-full bg-[#ababab] duration-0 swiper-scrollbar-horizontal"}>
+                    {/* TODO: swiper-scrollbar-horizontal */}
                 </div>
             </div>
             <div className={"w-full h-full absolute top-0 left-0 bg-[length:100%_100%]"
@@ -70,9 +71,9 @@ export default function Information() {
             <div className={"w-[34.375rem] portrait:w-[unset] h-[46.75rem] portrait:h-[unset] portrait:pr-[5.75rem]"
                 + " absolute top-[9.5rem] left-0 portrait:static"}>
                 <div className={"w-full h-full absolute top-0 left-0 bg-black bg-opacity-30 mix-blend-overlay"
-                    + " portrait:hidden"} />
+                    + " portrait:hidden"}/>
                 <div className={"w-full h-full absolute top-0 left-0 portrait:hidden mix-blend-difference"
-                    + " bg-[url('/media/list_bg_texture.png')] bg-cover bg-left-top"} />
+                    + " bg-[url('/media/list_bg_texture.png')] bg-cover bg-left-top"}/>
                 <div className={"h-full portrait:h-[unset] relative pt-[2.5rem] portrait:pt-[1.25rem]"
                     + " pl-[3.875rem] portrait:pl-[1.75rem] portrait:pr-[1.75rem]"
                     + " transition-[visibility,opacity] duration-1000"}>
@@ -88,7 +89,9 @@ export default function Information() {
                             </div>
                             <div className={"max-h-[2.8rem] portrait:h-max-[1.4rem] overflow-ellipsis"
                                 + " text-[2.25rem] portrait:text-[2.5rem] font-bold tracking-[2px]"
-                                + " line-clamp-2 portrait:line-clamp-1"}>[SWIPER_TITLE]</div>
+                                + " line-clamp-2 portrait:line-clamp-1"}
+                            >[SWIPER_TITLE]
+                            </div>
                             <div className={"mt-[1rem] text-[1.125rem] portrait:hidden"}>[SWIPER_SUBTITLE]</div>
                             <div className={novecentosanswide_medium.className
                                 + " text-[.75rem] portrait:text-[.875rem] leading-5 tracking-[2px]"}>
@@ -101,19 +104,19 @@ export default function Information() {
                                     <div className={"text-[1.25rem] font-bold"}>更多情报</div>
                                     <div className={bender_bold.className + " text-[.875rem]"}>READ MORE</div>
                                 </div>
-                                <IconArrow className={"w-[.5rem] ml-auto flex-none pointer-events-none"} />
+                                <IconArrow className={"w-[.5rem] ml-auto flex-none pointer-events-none"}/>
                             </a>
                         </div>
                     </div>
                     <div className={"flex portrait:mt-8 portrait:pt-8 portrait:pb-8 portrait:border-y"
                         + " portrait:border-solid portrait:border-t-[#565656] portrait:border-b-[#403c3b]"}>{
                         ["最新", "公告", "活动", "新闻"].map((label, index) =>
-                            <BreakingNewsTag key={index} {...{label, active:(index === 0)}} />)
+                            <BreakingNewsTag key={index} {...{label, active: (index === 0)}} />)
                     }</div>
                     <div className={"mt-2 portrait:mt-0"}>
                         <BreakingNewsItem tag="公告" title="[Breaking News Item Title]" date="2024 // 07 / 17"/>
                         <BreakingNewsItem tag="公告" title="中文测试中文测试中文测试中文测试" date="2024 // 07 / 17"/>
-                        <BreakingNewsItem tag="公告" title="日本語テスト日本語テスト日本語テスト" date="2024 // 07 / 17"/>
+                        <BreakingNewsItem tag="公告" title="日本語テスト日本語テスト" date="2024 // 07 / 17"/>
                         <a href="" target="_blank" className={bender_bold.className
                             + " w-[7.625rem] portrait:w-[11.125rem] h-[1.5rem] portrait:h-[1.75rem] whitespace-nowrap"
                             + " text-[.875rem] portrait:text-[1.3125rem] text-[#d2d2d2] hover:text-black"
