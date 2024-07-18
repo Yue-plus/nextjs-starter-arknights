@@ -58,7 +58,7 @@ export default function Root() {
             <More/>
         </main>
         <LineDecorator />
-        <ScrollTip />
+        <ScrollTip {...{viewIndex}} />
         <Menu state={navMenuState} {...{viewIndex}}/>
         <ToolBox state={socialToolState}/>
         <PersonInfo state={personInfoState} />

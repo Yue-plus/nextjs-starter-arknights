@@ -41,10 +41,15 @@ const config: Config = {
           "40%": {opacity: "1", transform: "translateY(0)"},
           "80%": {opacity: "1"},
           "100%": {opacity: "0", transform: "translateY(30%)"},
+        },
+        showHide: {
+          "0%,100%": {opacity: "0"},
+          "50%": {opacity: "1"},
         }
       },
       animation: {
         downHide: "downHide 1.5s infinite",
+        showHide: "showHide 2s infinite",
       },
     },
   },
