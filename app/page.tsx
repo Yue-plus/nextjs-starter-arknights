@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from "react";
 import {register as swiperRegister} from "swiper/element/bundle"
 import PageTracker from "@/app/_components/PageTracker";
-import Header, {NavigationList} from "@/app/_components/Header";
+import Header from "@/app/_components/Header";
 import ScrollTip from "@/app/_components/ScrollTip";
 import {Menu} from "@/app/_components/NavMenu";
 import ToolBox from "@/app/_components/ToolBox";
@@ -10,6 +10,7 @@ import PersonInfo from "@/app/_components/PersonInfo";
 import Index from "@/app/_pages/00-Index";
 import Information from "@/app/_pages/01-Information";
 import LineDecorator from "@/app/_components/LineDecorator";
+import arknightsConfig from "@/arknights.config";
 
 const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
 
@@ -53,7 +54,7 @@ export default function Root() {
                         prevIndex > 0 ? prevIndex - 1 : prevIndex);
                 } else {
                     setViewIndex(prevIndex =>
-                        prevIndex < NavigationList.length - 1 ? prevIndex + 1 : prevIndex);
+                        prevIndex < arknightsConfig.navbar.items.length - 1 ? prevIndex + 1 : prevIndex);
                 }
                 lastScrollTime = performance.now();
             }

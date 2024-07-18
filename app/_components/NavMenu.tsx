@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
-import {NavigationList} from "@/app/_components/Header";
 import {oswald_medium} from "@/app/_fonts/fonts"
 import {IconBiliBili, IconSkland, IconTapTap, IconWechat, IconWeibo} from "@/app/_components/SvgIcons";
+import arknightsConfig from "@/arknights.config";
 
 interface NavMenuProps {
     state: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
@@ -37,7 +37,7 @@ function Navigation({viewIndex, state: [active, setActive]}: {
 }) {
     let delay = -70
     return <div className="pt-[1.25rem] pr-[2.25rem] pb-0 pl-[3.375rem]">{
-        NavigationList.map((item, index) => {
+        arknightsConfig.navbar.items.map((item, index) => {
             delay += 70
             return <a key={index} href={item.href} onClick={() => {setActive(false)}}
                       className={"h-[7.5rem] flex items-center justify-between transition ease-in-out duration-200"}
@@ -49,10 +49,10 @@ function Navigation({viewIndex, state: [active, setActive]}: {
                           transform: `translateX(${active ? "0" : "20%"})`,
                       }}>
                 <div className={`transition duration-300 text-4xl ${oswald_medium.className}`}>
-                    {item.titleEn}
+                    {item.subtitle}
                 </div>
                 <div className="h-full text-[1.75rem] relative flex items-center transition duration-300">
-                    {item.titleZh}
+                    {item.title}
                     <div className="w-full h-[.375rem] absolute right-0 bottom-[-.1875rem] bg-[currentColor]"></div>
                 </div>
             </a>
