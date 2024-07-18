@@ -1,5 +1,4 @@
 "use client"
-import {oswald_medium} from "@/app/_fonts/fonts";
 import React, {useEffect} from "react";
 import Image from "next/image";
 import {Person, Social, Sound} from "@/app/_components/NavTools";
@@ -50,7 +49,7 @@ export default function Header({
                                className={"inline-block text-center mx-10 duration-300 hover:text-ark-blue"
                                    + (viewIndex !== index || " text-ark-blue")}>
                         <a href={item.href} className="text-left">
-                            <div className={oswald_medium.className} style={{fontSize: "1.375rem"}}>{item.title}</div>
+                            <div className="font-oswaldMedium" style={{fontSize: "1.375rem"}}>{item.title}</div>
                             <div style={{fontSize: "0.875rem"}}>{item.subtitle}</div>
                         </a>
                     </li>

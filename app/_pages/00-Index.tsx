@@ -1,4 +1,3 @@
-import {novecentosanswide_medium, novecentosanswide_ultraBold} from "@/app/_fonts/fonts";
 import PortraitBottomGradientMask from "@/app/_components/PortraitBottomGradientMask";
 import {CopyrightMini} from "@/app/_components/SvgIcons";
 import "./page.css"
@@ -26,10 +25,9 @@ export default function Index() {
             <div className={"absolute left-[4.5rem] portrait:left-[2rem] bottom-[2.75rem] portrait:bottom-[3rem]"
                 + " transition-transform duration-1000"}>
                 <div className={"flex"}>
-                    <div className={novecentosanswide_ultraBold.className
-                        + " leading-[.75] text-[5.5rem] portrait:text-[2.375rem] mr-[2rem] portrait:mr-[1rem]"}
-                    >ARKNIGHTS</div>
-                    <div className={novecentosanswide_medium.className + " flex flex-col"}>
+                    <div className={"leading-[.75] text-[5.5rem] portrait:text-[2.375rem] font-n15eUltraBold"
+                        + " mr-[2rem] portrait:mr-[1rem]"}>ARKNIGHTS</div>
+                    <div className={"flex flex-col font-n15eMedium"}>
                         <div className={"text-[1.125rem] portrait:text-[.5rem]"}>RHODES ISLAND</div>
                         <div className={"text-[.875rem] portrait:text-[.375rem]"}>HTTPS://ARKNIGHTS.YUE.ZONE/</div>
                         <div className={"w-[6rem] h-px bg-white mt-auto"} />

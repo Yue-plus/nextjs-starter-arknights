@@ -44,7 +44,7 @@ export default function ToolBox({state: [opened, setOpened]}: {
                              absolute bottom-full left-[2rem]
                              portrait:hidden`}></div>
             <div className="portrait:w-[25.75rem] relative pt-[2.625rem] portrait:pt-0 pb-[3rem] portrait:m-auto">
-                <div className={bender_bold.className + " mx-12 portrait:mr-0 portrait:ml-0 whitespace-nowrap"
+                <div className={"mx-12 portrait:mr-0 portrait:ml-0 whitespace-nowrap font-benderBold"
                     + " text-[.75rem] portrait:text-[1.125rem] flex items-center"}>
                     TOOLBOX
                     <span className="ml-[1em] flex-auto h-px bg-white"></span>

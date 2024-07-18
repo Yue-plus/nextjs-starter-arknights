@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
+import {novecentosanswide_bold} from "@/app/_fonts/fonts";
 
 const config: Config = {
   content: [
@@ -18,6 +19,17 @@ const config: Config = {
       "white": colors.white,
     },
     extend: {
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        benderBold: ["var(--font-bender-bold)"],
+        benderRegular: ["var(--font-bender-regular)"],
+        n15eBold: ["var(--font-novecentosanswide-bold)"],
+        n15eDemiBold: ["var(--font-novecentosanswide-demiBold)"],
+        n15eMedium: ["var(--font-novecentosanswide-medium)"],
+        n15eUltraBold: ["var(--font-novecentosanswide-ultraBold)"],
+        oswaldMedium: ["var(--font-oswald-medium)"],
+        sdkSansRegular: ["var(--font-sdk-sans-regular)"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

@@ -14,8 +14,8 @@ function Divider({children, portraitHidden}: {
     children: React.ReactNode
     portraitHidden?: boolean
 }) {
-    return <div className={bender_bold.className + " mr-[1.25rem] portrait:mr-[6.75rem] ml-[2.25rem] portrait:ml-[8rem]"
-        + " whitespace-nowrap text-[.75rem] portrait:text-[1.125rem] flex items-center "
+    return <div className={"mr-[1.25rem] portrait:mr-[6.75rem] ml-[2.25rem] portrait:ml-[8rem] whitespace-nowrap"
+        + " text-[.75rem] portrait:text-[1.125rem] font-benderBold flex items-center "
         + (portraitHidden ? " portrait:hidden" : "")}>
         {children}
         <span className="ml-[1em] flex-auto h-px bg-white"/>

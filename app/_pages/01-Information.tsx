@@ -2,7 +2,6 @@ import React from "react"
 import "swiper/css"
 import PortraitBottomGradientMask from "@/app/_components/PortraitBottomGradientMask"
 import "./page.css"
-import {bender_bold, bender_regular, novecentosanswide_medium, oswald_medium} from "@/app/_fonts/fonts";
 import {IconArrow} from "@/app/_components/SvgIcons";
 
 function BreakingNewsTag({label, active}: {
@@ -30,9 +29,9 @@ function BreakingNewsItem({tag, title, date}: {
         <div className={"text-[1.125rem] text-ark-blue whitespace-nowrap"}>{tag}</div>
         <div className={"w-[17.5rem] portrait:w-[unset] text-[d2d2d2] ml-auto portrait:ml-[2.75rem] portrait:flex-auto"
             + " portrait:flex portrait:flex-row-reverse portrait:justify-between portrait:items-center"}>
-            <div className={bender_regular.className
-                + " portrait:text-[1rem] portrait:ml-20 whitespace-nowrap tracking-[1px]"}
-            >{date}</div>
+            <div className={"portrait:text-[1rem] font-benderRegular portrait:ml-20 whitespace-nowrap tracking-[1px]"}>
+                {date}
+            </div>
             <div className={"max-h-[3.2rem] portrait:max-h-[3.4em] font-bold text-[1.125rem] portrait:text-[1.6rem]"
                 + " portrait:leading-[1.6] tracking-[2px] line-clamp-2 text-ellipsis mt-[.125rem]"}
             >{title}</div>
@@ -77,32 +76,29 @@ export default function Information() {
                 <div className={"h-full portrait:h-[unset] relative pt-[2.5rem] portrait:pt-[1.25rem]"
                     + " pl-[3.875rem] portrait:pl-[1.75rem] portrait:pr-[1.75rem]"
                     + " transition-[visibility,opacity] duration-1000"}>
-                    <div className={oswald_medium.className
-                        + " h-[.95em] text-[7rem] text-[#242424] -tracking-wider whitespace-nowrap overflow-hidden"
-                        + " absolute top-full left-[9rem] flex items-end portrait:hidden"}
+                    <div className={"h-[.95em] text-[7rem] text-[#242424] font-oswaldMedium -tracking-wider"
+                        + " whitespace-nowrap overflow-hidden absolute top-full left-[9rem]"
+                        + " flex items-end portrait:hidden"}
                     ><span>BREAKING NEWS</span></div>
                     <div className={"w-[26.5rem] portrait:w-[unset] portrait:static"
                         + " absolute left-[3.875rem] bottom-[-1.875rem]"}>
                         <div className={"transition-[visibility,opacity] duration-300 translate-x-[-1.5rem]"}>
-                            <div className={bender_regular.className + " tracking-[1px] portrait:mt-[1rem]"}>
+                            <div className={"font-benderRegular tracking-[1px] portrait:mt-[1rem]"}>
                                 2024 // 07 / 16
                             </div>
                             <div className={"max-h-[2.8rem] portrait:h-max-[1.4rem] overflow-ellipsis"
                                 + " text-[2.25rem] portrait:text-[2.5rem] font-bold tracking-[2px]"
                                 + " line-clamp-2 portrait:line-clamp-1"}
-                            >[SWIPER_TITLE]
-                            </div>
+                            >[SWIPER_TITLE]</div>
                             <div className={"mt-[1rem] text-[1.125rem] portrait:hidden"}>[SWIPER_SUBTITLE]</div>
-                            <div className={novecentosanswide_medium.className
-                                + " text-[.75rem] portrait:text-[.875rem] leading-5 tracking-[2px]"}>
-                                HTTPS://ARKNIGHTS.YUE.ZONE/
-                            </div>
+                            <div className={"text-[.75rem] portrait:text-[.875rem] font-n15eMedium"
+                                + " leading-5 tracking-[2px]"}>HTTPS://ARKNIGHTS.YUE.ZONE/</div>
                             <a href="" target="_blank" className={"w-[14.375rem] h-[3.75rem] pr-7 pl-4 mt-8 text-black"
                                 + " no-underline whitespace-nowrap bg-ark-blue hover:bg-white flex items-center"
                                 + " cursor-pointer transition-colors duration-300 portrait:hidden"}>
                                 <div>
                                     <div className={"text-[1.25rem] font-bold"}>更多情报</div>
-                                    <div className={bender_bold.className + " text-[.875rem]"}>READ MORE</div>
+                                    <div className={"text-[.875rem] font-benderBold"}>READ MORE</div>
                                 </div>
                                 <IconArrow className={"w-[.5rem] ml-auto flex-none pointer-events-none"}/>
                             </a>
@@ -117,11 +113,11 @@ export default function Information() {
                         <BreakingNewsItem tag="公告" title="[Breaking News Item Title]" date="2024 // 07 / 17"/>
                         <BreakingNewsItem tag="公告" title="中文测试中文测试中文测试中文测试" date="2024 // 07 / 17"/>
                         <BreakingNewsItem tag="公告" title="日本語テスト日本語テスト" date="2024 // 07 / 17"/>
-                        <a href="" target="_blank" className={bender_bold.className
-                            + " w-[7.625rem] portrait:w-[11.125rem] h-[1.5rem] portrait:h-[1.75rem] whitespace-nowrap"
-                            + " text-[.875rem] portrait:text-[1.3125rem] text-[#d2d2d2] hover:text-black"
-                            + " bg-[#585858] hover:bg-white px-[.625rem] portrait:px-3 mt-8 portrait:mt-10"
-                            + " flex items-center cursor-pointer transition-colors duration-300"}>
+                        <a href="" target="_blank" className={"w-[7.625rem] portrait:w-[11.125rem]"
+                            + " h-[1.5rem] portrait:h-[1.75rem] text-[.875rem] portrait:text-[1.3125rem] text-[#d2d2d2]"
+                            + " hover:text-black font-benderBold whitespace-nowrap bg-[#585858] hover:bg-white"
+                            + " px-[.625rem] portrait:px-3 mt-8 portrait:mt-10 flex items-center cursor-pointer"
+                            + " transition-colors duration-300"}>
                             <span>READ MORE</span>
                             <IconArrow className={"w-[.4375rem] ml-auto flex-none"}/>
                         </a>

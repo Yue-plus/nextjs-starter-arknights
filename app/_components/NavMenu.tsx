@@ -1,6 +1,5 @@
 "use client"
 import React from "react";
-import {oswald_medium} from "@/app/_fonts/fonts"
 import {IconBiliBili, IconSkland, IconTapTap, IconWechat, IconWeibo} from "@/app/_components/SvgIcons";
 import arknightsConfig from "@/arknights.config";
 
@@ -9,7 +8,7 @@ interface NavMenuProps {
 }
 
 const LineClassName: React.ComponentProps<"div">["className"] =
-    "w-full h-[2px] bg-white absolute left-1/2 transition duration-300"
+    "w-full h-[2px] bg-white absolute left-1/2 transition duration-300 ease-in-out"
 
 export default function NavMenu({state: [active, setActive]}: NavMenuProps) {
     return <div className="w-[5.75rem] h-full landscape:hidden portrait:flex"
@@ -48,11 +47,11 @@ function Navigation({viewIndex, state: [active, setActive]}: {
                           opacity: active ? 1 : 0,
                           transform: `translateX(${active ? "0" : "20%"})`,
                       }}>
-                <div className={`transition duration-300 text-4xl ${oswald_medium.className}`}>
-                    {item.subtitle}
+                <div className={`transition duration-300 text-4xl font-oswaldMedium`}>
+                    {item.title}
                 </div>
                 <div className="h-full text-[1.75rem] relative flex items-center transition duration-300">
-                    {item.title}
+                    {item.subtitle}
                     <div className="w-full h-[.375rem] absolute right-0 bottom-[-.1875rem] bg-[currentColor]"></div>
                 </div>
             </a>
@@ -64,8 +63,8 @@ function ToolBox() {
     const aClassName: string = "text-inherit flex-none cursor-pointer"
     const iconClassName: string = "h-auto m-auto pointer-events-none"
     return <div className={"mt-auto pr-9 pb-[4.5rem] pl-[3.375rem]"}>
-        <div className={"text-[1.5rem] flex items-center"}>
-            <div className={"w-full min-w-0 h-px mr-4 flex-auto"} style={{backgroundColor: "hsla(0, 0%, 100%, .3)"}}/>
+        <div className={"text-[1.5rem] font-benderBold flex items-center"}>
+            <div className={"w-full min-w-0 h-px mr-4 bg-white bg-opacity-30 flex-auto"}/>
             TOOLBOX
         </div>
         <div className={"mt-4 flex items-center justify-between"}>

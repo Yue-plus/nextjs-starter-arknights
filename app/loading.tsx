@@ -25,15 +25,15 @@ export default function Loading() {
                 </div>
                 <div className={"mt-[.75rem] portrait:mt-[.5rem] portrait:text-[1.25rem]"
                     + " flex items-center justify-between"}>
-                    <div className={bender_bold.className + " flex items-center"}>
+                    <div className={"font-benderBold flex items-center"}>
                         <IconDblArrow className={"w-[.75rem] h-full mr-4 portrait:mr-2 pointer-events-none"} />
                         <span>LOADING&nbsp;-&nbsp;</span>
                         <span>{percentage}</span>
                         <span>%&nbsp;&nbsp;......</span>
                     </div>
                     <div>
-                        <span className={bender_bold.className + " mr-8 portrait:mr-6"}>ARKNIGHTS</span>
-                        <span className={bender_regular.className}>
+                        <span className={"font-benderBold mr-8 portrait:mr-6"}>ARKNIGHTS</span>
+                        <span className={"font-benderRegular"}>
                             &#47;&#47;&nbsp;&nbsp;&nbsp;&nbsp;https://arknights.yue.zone/
                         </span>
                     </div>
