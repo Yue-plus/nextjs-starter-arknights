@@ -1,7 +1,6 @@
 import React from "react"
 import "swiper/css"
 import PortraitBottomGradientMask from "@/app/_components/PortraitBottomGradientMask"
-import "./page.css"
 import {IconArrow} from "@/app/_components/SvgIcons";
 
 function BreakingNewsTag({label, active}: {

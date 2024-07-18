@@ -1,6 +1,5 @@
 import PortraitBottomGradientMask from "@/app/_components/PortraitBottomGradientMask";
 import {CopyrightMini} from "@/app/_components/SvgIcons";
-import "./page.css"
 
 export default function Index() {
     // TODO: 添加动效

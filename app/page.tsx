@@ -1,5 +1,7 @@
 "use client"
 import React, {useEffect, useState} from "react";
+import LineDecorator from "@/app/_components/LineDecorator";
+import arknightsConfig from "@/arknights.config";
 import {register as swiperRegister} from "swiper/element/bundle"
 import PageTracker from "@/app/_components/PageTracker";
 import Header from "@/app/_components/Header";
@@ -9,34 +11,11 @@ import ToolBox from "@/app/_components/ToolBox";
 import PersonInfo from "@/app/_components/PersonInfo";
 import Index from "@/app/_pages/00-Index";
 import Information from "@/app/_pages/01-Information";
-import LineDecorator from "@/app/_components/LineDecorator";
-import arknightsConfig from "@/arknights.config";
-
-const pageClassName: string = "w-0 h-full absolute top-0 right-0 bottom-0 left-auto overflow-hidden duration-1000"
-
-function Operator() {
-    return <div id="operator" className={pageClassName} style={{backgroundColor: "darkgrey"}}>
-        <h1 className="text-9xl absolute top-1/4 left-1/4">Operator</h1>
-    </div>
-}
-
-function World() {
-    return <div id="world" className={pageClassName} style={{backgroundColor: "darkorange"}}>
-        <h1 className="text-9xl absolute top-1/4 left-1/4">World</h1>
-    </div>
-}
-
-function Media() {
-    return <div id="media" className={pageClassName} style={{backgroundColor: "darkblue"}}>
-        <h1 className="text-9xl absolute top-1/4 left-1/4">Media</h1>
-    </div>
-}
-
-function More() {
-    return <div id="more" className={pageClassName} style={{backgroundColor: "darkred"}}>
-        <h1 className="text-9xl absolute top-1/4 left-1/4">More</h1>
-    </div>
-}
+import Operator from "@/app/_pages/02-Operator";
+import World from "@/app/_pages/03-World";
+import Media from "@/app/_pages/04-Media";
+import More from "@/app/_pages/05-More";
+import "./_pages/page.css"
 
 export default function Root() {
     // See: https://swiperjs.com/element
