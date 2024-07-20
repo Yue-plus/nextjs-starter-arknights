@@ -7,6 +7,7 @@ export type NavbarItem = {
 }
 
 export type ArknightsConfig = {
+    metadataBase?: null | URL
     title: string
     description: string
     language: Languages

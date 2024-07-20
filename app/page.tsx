@@ -38,8 +38,8 @@ export default function Root() {
                 lastScrollTime = performance.now();
             }
         }
-        window.addEventListener("wheel", handleScroll);
-        return () => window.removeEventListener("wheel", handleScroll);
+        document.getElementById("main")!.addEventListener("wheel", handleScroll);
+        return () => document.getElementById("main")!.removeEventListener("wheel", handleScroll);
     }, []);
 
     const navMenuState = useState(false)
@@ -49,7 +49,7 @@ export default function Root() {
     return <div className="relative w-full h-full m-auto max-w-[180rem]">
         <PageTracker {...{viewIndex}} />
         <Header viewIndexState={[viewIndex, setViewIndex]} {...{navMenuState, socialToolState, personInfoState}} />
-        <main className="w-full h-full relative select-none">
+        <main id="main" className="w-full h-full relative select-none">
             <Index/>
             <Information/>
             <Operator/>

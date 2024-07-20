@@ -1,6 +1,7 @@
 import {ArknightsConfig} from "@/app/_types/config";
 
 const arknightsConfig: ArknightsConfig = {
+    metadataBase: new URL("https://yue-plus.github.io/nextjs-starter-arknights/nextjs-starter-arknights/"),
     title: "Arknights",
     description: "Arknights Next.js Theme Template Starter",
     language: "zh",

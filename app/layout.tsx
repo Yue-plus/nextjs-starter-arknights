@@ -17,6 +17,7 @@ import ResponsiveFontSize from "@/app/_components/ResponsiveFontSize";
 import arknightsConfig from "@/arknights.config";
 
 export const metadata: Metadata = {
+    metadataBase: arknightsConfig.metadataBase,
     title: arknightsConfig.title,
     description: arknightsConfig.description,
 };
