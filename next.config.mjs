@@ -4,7 +4,7 @@
  */
 const nextConfig = {
     output: "export",
-    basePath: "/nextjs-starter-arknights",
+    assetPrefix: "/nextjs-starter-arknights",
 };
 
 export default nextConfig;
