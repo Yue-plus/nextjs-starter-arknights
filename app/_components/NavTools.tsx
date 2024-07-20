@@ -1,6 +1,7 @@
 "use client"
 import React, {useEffect, useRef, useState} from "react";
 import {IconSocial, IconSound, IconUser} from "@/app/_components/SvgIcons";
+import nextConfig from "@/next.config.mjs";
 
 const ActiveColor = "#18d1ff"
 const InactiveColor = "#c4c2c2"
@@ -36,7 +37,7 @@ export function Sound() {
             transform: `scaleY(${active ? 1 : .5})`,
         }}/>
         {/* https://web.hycdn.cn/arknights/official/_next/static/media/audio/bgm.ea4286.mp3 */}
-        <audio ref={audioRef} src="/media/audio/bgm.mp3" autoPlay/>
+        <audio ref={audioRef} src={nextConfig.assetPrefix + "/media/audio/bgm.mp3"} autoPlay/>
     </div>
 }
 
