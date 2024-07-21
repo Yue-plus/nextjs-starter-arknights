@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
-import {novecentosanswide_bold} from "@/app/_fonts/fonts";
+// import nextConfig from "@/next.config.mjs";
 
 const config: Config = {
   content: [
@@ -32,8 +32,8 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "common-mask": `url(/media/common_mask.png)`
       },
       keyframes: {
         downHide: {

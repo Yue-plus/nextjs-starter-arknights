@@ -65,7 +65,7 @@ export default function Information() {
                 + " pointer-events-none portrait:hidden"}
                  style={{backgroundImage: "linear-gradient(0deg, #000 5rem, transparent 20rem)"}}/>
             <div className={"w-full h-full absolute top-0 left-0 portrait:hidden"
-                + " bg-[url('/media/common_mask.png')] bg-[length:100%_100%] mix-blend-overlay pointer-events-none"}/>
+                + " bg-common-mask bg-[length:100%_100%] mix-blend-overlay pointer-events-none"}/>
             <div className={"w-[34.375rem] portrait:w-[unset] h-[46.75rem] portrait:h-[unset] portrait:pr-[5.75rem]"
                 + " absolute top-[9.5rem] left-0 portrait:static"}>
                 <div className={"w-full h-full absolute top-0 left-0 bg-black bg-opacity-30 mix-blend-overlay"

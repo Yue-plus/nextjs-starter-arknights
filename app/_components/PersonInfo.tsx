@@ -1,5 +1,4 @@
 import React from "react";
-import {bender_bold} from "@/app/_fonts/fonts";
 import {
     IconArrow,
     IconBiliBili,
@@ -9,6 +8,7 @@ import {
     IconWeibo,
     LogoRhodesIsland
 } from "@/app/_components/SvgIcons";
+import nextConfig from "@/next.config.mjs";
 
 function Divider({children, portraitHidden}: {
     children: React.ReactNode
@@ -29,11 +29,11 @@ function Welcome() {
             <div className={"w-full absolute top-[2.375rem] portrait:top-[1rem]"}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img className={"w-[12.5625rem] portrait:w-[21rem] h-auto ml-[1.5rem] portrait:ml-[5.5rem] block"}
-                     src="/media/no_account_info.png"
+                     src={nextConfig.assetPrefix + "/media/no_account_info.png"}
                      alt="无账号信息"/>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img className={"w-[10.75rem] portrait:w-[17.75rem] h-auto ml-[2.875rem] portrait:ml-[8rem] block"}
-                     src="/media/stroke_text-rhodes_island.png"
+                     src={nextConfig.assetPrefix + "/media/stroke_text-rhodes_island.png"}
                      alt="Rhodes Island"/>
                 <div className={"text-[1.125rem] portrait:text-[1.875rem]"
                     + " ml-[2.875rem] portrait:ml-[8rem] mt-[.25rem] font-bold"}>Please login.</div>
