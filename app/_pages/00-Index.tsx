@@ -6,17 +6,15 @@ export default function Index() {
     return <div id="index" className="rootPage" style={{width: "100%", left: 0}}>
         <div className={"w-[100vw] w-max-[180rem] h-full absolute top-0 right-0 bottom-0 left-0 z-[2]"
             + " transition-opacity duration-100"}>
-            <div className={"w-full h-full absolute top-0 left-0"
-                + " bg-[url('/media/index-bg.jpg')] bg-center bg-cover bg-no-repeat transition-opacity duration-1000"}/>
+            <div className={"w-full h-full absolute top-0 left-0 bg-index bg-center bg-cover bg-no-repeat"
+                + " transition-opacity duration-1000"}/>
             {/* TODO: <video> <canvas> */}
             <div className={"w-[52.5rem] portrait:w-[18.75rem] h-[60.75rem] portrait:h-[12rem] absolute left-0 bottom-0"
-                + " bg-[url('/media/mask_block.png')] portrait:bg-[url('/media/mask_block_m.png')]"
-                + " bg-[auto_110%] portrait:bg-[auto_100%] bg-[100%_0]"
+                + " bg-mask-block portrait:bg-mask-block-m bg-[auto_110%] portrait:bg-[auto_100%] bg-[100%_0]"
                 + " opacity-[.78] transition-opacity duration-[2s]"}/>
             <div className={"w-[52.5rem] portrait:w-[5.75rem] h-[60.75rem] portrait:h-[12rem]"
                 + " absolute left-full bottom-0 opacity-25 transition-opacity delay-[2.3s] duration-[.6s]"
-                + " bg-[url('/media/mask_block.png')] portrait:bg-[url('/media/mask_block_m.png')]"
-                + " bg-[auto_110%] portrait:bg-[auto_100%] bg-no-repeat"
+                + " bg-mask-block portrait:bg-mask-block-m bg-[auto_110%] portrait:bg-[auto_100%] bg-no-repeat"
                 + " translate-x-[-14.75rem] portrait:translate-x-[-3.75rem]"}/>
             <PortraitBottomGradientMask />
             <div className={"absolute left-[4.5rem] portrait:left-[2rem] bottom-[2.75rem] portrait:bottom-[3rem]"

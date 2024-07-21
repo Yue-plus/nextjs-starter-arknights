@@ -38,9 +38,7 @@ export default function RootLayout({children}: Readonly<{
     return <html lang={arknightsConfig.language} className={"h-full" + fontVariables} style={{fontSize: "16px"}}>
         <ResponsiveFontSize />
         <body className={`w-full h-full text-white bg-black m-0 overflow-hidden`}>
-            <div className="w-full h-full relative bg-[url('/media/layout-bg.jpg')] bg-center bg-cover bg-no-repeat">
-                {children}
-            </div>
+            <div className="w-full h-full relative bg-layout bg-center bg-cover bg-no-repeat">{children}</div>
             <SvgDefs />
         </body>
     </html>

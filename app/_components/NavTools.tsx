@@ -37,7 +37,7 @@ export function Sound() {
             transform: `scaleY(${active ? 1 : .5})`,
         }}/>
         {/* https://web.hycdn.cn/arknights/official/_next/static/media/audio/bgm.ea4286.mp3 */}
-        <audio ref={audioRef} src={nextConfig.assetPrefix + "/media/audio/bgm.mp3"} autoPlay/>
+        <audio ref={audioRef} src={(nextConfig.assetPrefix ?? "") + "/media/audio/bgm.mp3"} autoPlay/>
     </div>
 }
 

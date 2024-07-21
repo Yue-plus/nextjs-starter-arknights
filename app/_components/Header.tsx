@@ -42,7 +42,7 @@ export default function Header({
                    style={{backgroundImage: "linear-gradient(0deg, transparent, rgba(0, 0, 0, .6), rgba(0, 0, 0, .8))"}}>
         <a className="mx-10" href="/" style={{width: "12rem", marginLeft: "3rem", marginRight: "auto"}}>
             <Image width={180} height={60}
-                   src={nextConfig.assetPrefix + arknightsConfig.navbar.logo.src}
+                   src={(nextConfig.assetPrefix ?? "") + arknightsConfig.navbar.logo.src}
                    alt={arknightsConfig.navbar.logo.alt}/>
         </a>
         <nav className="portrait:hidden">

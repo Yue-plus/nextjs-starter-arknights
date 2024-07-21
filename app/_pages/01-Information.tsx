@@ -64,14 +64,14 @@ export default function Information() {
             <div className={"w-full h-full absolute top-0 left-0 bg-[length:100%_100%]"
                 + " pointer-events-none portrait:hidden"}
                  style={{backgroundImage: "linear-gradient(0deg, #000 5rem, transparent 20rem)"}}/>
-            <div className={"w-full h-full absolute top-0 left-0 portrait:hidden"
-                + " bg-common-mask bg-[length:100%_100%] mix-blend-overlay pointer-events-none"}/>
+            <div className={"w-full h-full absolute top-0 left-0 portrait:hidden bg-common-mask bg-[length:100%_100%]"
+                + " mix-blend-overlay pointer-events-none"}/>
             <div className={"w-[34.375rem] portrait:w-[unset] h-[46.75rem] portrait:h-[unset] portrait:pr-[5.75rem]"
                 + " absolute top-[9.5rem] left-0 portrait:static"}>
                 <div className={"w-full h-full absolute top-0 left-0 bg-black bg-opacity-30 mix-blend-overlay"
                     + " portrait:hidden"}/>
                 <div className={"w-full h-full absolute top-0 left-0 portrait:hidden mix-blend-difference"
-                    + " bg-[url('/media/list_bg_texture.png')] bg-cover bg-left-top"}/>
+                    + " bg-list-texture bg-cover bg-left-top"}/>
                 <div className={"h-full portrait:h-[unset] relative pt-[2.5rem] portrait:pt-[1.25rem]"
                     + " pl-[3.875rem] portrait:pl-[1.75rem] portrait:pr-[1.75rem]"
                     + " transition-[visibility,opacity] duration-1000"}>
