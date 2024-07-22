@@ -51,7 +51,7 @@ export default function Header({
                     return <li key={index}
                                className={"inline-block text-center mx-10 duration-300 hover:text-ark-blue"
                                    + (viewIndex !== index || " text-ark-blue")}>
-                        <a href={item.href} className="text-left">
+                        <a href={(nextConfig.assetPrefix ?? "") + item.href} className="text-left">
                             <div className="font-oswaldMedium" style={{fontSize: "1.375rem"}}>{item.title}</div>
                             <div style={{fontSize: "0.875rem"}}>{item.subtitle}</div>
                         </a>

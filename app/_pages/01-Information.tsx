@@ -40,7 +40,7 @@ function BreakingNewsItem({tag, title, date}: {
 
 export default function Information() {
     return <div id="information" className="rootPage">
-        <div className={"w-[100vw] w-max-[180rem] h-full absolute top-0 right-0 bottom-0 left-auto"
+        <div className={"w-[100vw] max-w-[180rem] h-full absolute top-0 right-0 bottom-0 left-auto"
             + " transition-opacity duration-100"}>
             <PortraitBottomGradientMask/>
             <div className={"w-[83.125rem] portrait:w-[unset] h-[46.875rem] portrait:h-[24.125rem] portrait:static"
@@ -85,7 +85,7 @@ export default function Information() {
                             <div className={"font-benderRegular tracking-[1px] portrait:mt-[1rem]"}>
                                 2024 // 07 / 16
                             </div>
-                            <div className={"max-h-[2.8rem] portrait:h-max-[1.4rem] overflow-ellipsis"
+                            <div className={"max-h-[2.8rem] portrait:max-h-[1.4rem] overflow-ellipsis"
                                 + " text-[2.25rem] portrait:text-[2.5rem] font-bold tracking-[2px]"
                                 + " line-clamp-2 portrait:line-clamp-1"}
                             >[SWIPER_TITLE]</div>
