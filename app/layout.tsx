@@ -32,9 +32,7 @@ const fontVariables = " " + inter.variable
     + " " + oswald_medium.variable
     + " " + sdkSans_regular.variable
 
-export default function RootLayout({children}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
     return <html lang={arknightsConfig.language} className={"h-full" + fontVariables} style={{fontSize: "16px"}}>
         <ResponsiveFontSize />
         <body className={`w-full h-full text-white bg-black m-0 overflow-hidden`}>

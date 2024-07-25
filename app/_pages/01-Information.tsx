@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import "swiper/css"
 import PortraitBottomGradientMask from "@/app/_components/PortraitBottomGradientMask"
 import {IconArrow} from "@/app/_components/SvgIcons";
@@ -38,8 +38,20 @@ function BreakingNewsItem({tag, title, date}: {
     </a>
 }
 
-export default function Information() {
-    return <div id="information" className="rootPage">
+export default function Information({viewIndex}: { viewIndex: number }) {
+    const selfIndex = 1
+    const [left, setLeft] = useState("0")
+
+    useEffect(() => {
+        if (selfIndex === viewIndex) return
+        if (selfIndex < viewIndex) return setLeft("0")
+        if (selfIndex > viewIndex) return setLeft("auto")
+    }, [viewIndex])
+
+    return <div id="information" className="rootPage" style={{
+        width: selfIndex === viewIndex ? "100%" : "0%",
+        left: left,
+    }}>
         <div className={"w-[100vw] max-w-[180rem] h-full absolute top-0 right-0 bottom-0 left-auto"
             + " transition-opacity duration-100"}>
             <PortraitBottomGradientMask/>
@@ -88,10 +100,12 @@ export default function Information() {
                             <div className={"max-h-[2.8rem] portrait:max-h-[1.4rem] overflow-ellipsis"
                                 + " text-[2.25rem] portrait:text-[2.5rem] font-bold tracking-[2px]"
                                 + " line-clamp-2 portrait:line-clamp-1"}
-                            >[SWIPER_TITLE]</div>
+                            >[SWIPER_TITLE]
+                            </div>
                             <div className={"mt-[1rem] text-[1.125rem] portrait:hidden"}>[SWIPER_SUBTITLE]</div>
                             <div className={"text-[.75rem] portrait:text-[.875rem] font-n15eMedium"
-                                + " leading-5 tracking-[2px]"}>HTTPS://ARKNIGHTS.YUE.ZONE/</div>
+                                + " leading-5 tracking-[2px]"}>HTTPS://ARKNIGHTS.YUE.ZONE/
+                            </div>
                             <a href="" target="_blank" className={"w-[14.375rem] h-[3.75rem] pr-7 pl-4 mt-8 text-black"
                                 + " no-underline whitespace-nowrap bg-ark-blue hover:bg-white flex items-center"
                                 + " cursor-pointer transition-colors duration-300 portrait:hidden"}>

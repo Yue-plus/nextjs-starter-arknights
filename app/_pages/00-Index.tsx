@@ -1,9 +1,11 @@
 import PortraitBottomGradientMask from "@/app/_components/PortraitBottomGradientMask";
 import {CopyrightMini} from "@/app/_components/SvgIcons";
 
-export default function Index() {
+export default function Index({viewIndex} : {viewIndex: number}) {
+    const selfIndex = 0
+
     // TODO: 添加动效
-    return <div id="index" className="rootPage" style={{width: "100%", left: 0}}>
+    return <div id="index" className="rootPage" style={{width: selfIndex === viewIndex ? "100%" : "0%"}}>
         <div className={"w-[100vw] max-w-[180rem] h-full absolute top-0 right-0 bottom-0 left-0 z-[2]"
             + " transition-opacity duration-100"}>
             <div className={"w-full h-full absolute top-0 left-0 bg-index bg-center bg-cover bg-no-repeat"
