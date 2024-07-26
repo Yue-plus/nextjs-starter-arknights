@@ -1,4 +1,5 @@
 import {Languages} from "next/dist/lib/metadata/types/alternative-urls-types";
+import React from "react";
 
 export type NavbarItem = {
     title: string
@@ -17,5 +18,12 @@ export type ArknightsConfig = {
             alt: string
         }
         items: NavbarItem[]
+    }
+    rootPage: {
+        views: (() => React.JSX.Element)[]
+    }
+    pageTracker: {
+        microInfo: string
+        labels: string[]
     }
 }

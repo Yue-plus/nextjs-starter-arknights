@@ -1,7 +1,0 @@
-@tailwind components;
-
-@layer components {
-    .rootPage {
-        @apply w-0 h-full absolute top-0 right-0 bottom-0 left-0 overflow-hidden transition-[width] duration-1000
-    }
-}

@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useMemo, useRef, useState} from "react";
 import LineDecorator from "@/app/_components/LineDecorator";
 import arknightsConfig from "@/arknights.config";
 import {register as swiperRegister} from "swiper/element/bundle"
@@ -9,13 +9,24 @@ import ScrollTip from "@/app/_components/ScrollTip";
 import {Menu} from "@/app/_components/NavMenu";
 import ToolBox from "@/app/_components/ToolBox";
 import PersonInfo from "@/app/_components/PersonInfo";
-import Index from "@/app/_pages/00-Index";
-import Information from "@/app/_pages/01-Information";
-import Operator from "@/app/_pages/02-Operator";
-import World from "@/app/_pages/03-World";
-import Media from "@/app/_pages/04-Media";
-import More from "@/app/_pages/05-More";
-import "./_pages/page.css"
+
+function PageViewTemplate({selfIndex, viewIndex, children}: {
+    selfIndex: number, viewIndex: number, children: React.ReactNode
+}) {
+    const width = useMemo(() => {
+        return selfIndex === viewIndex ? "100%" : "0%"
+    }, [selfIndex, viewIndex])
+
+    const [left, setLeft] = useState("0")
+    useEffect(() => {
+        if (selfIndex === viewIndex) return
+        if (selfIndex < viewIndex) return setLeft("0")
+        if (selfIndex > viewIndex) return setLeft("auto")
+    }, [selfIndex, viewIndex])
+
+    return <div style={{width, left}} className={"w-0 h-full absolute top-0 right-0 bottom-0 left-0"
+        + " overflow-hidden transition-[width] duration-1000"}>{children}</div>
+}
 
 export default function RootPage() {
     // See: https://swiperjs.com/element
@@ -73,14 +84,13 @@ export default function RootPage() {
     return <div className="relative w-full h-full m-auto max-w-[180rem]">
         <PageTracker {...{viewIndex}} />
         <Header {...{viewIndex, navMenuState, socialToolState, personInfoState}} />
-        <main id="main" className="w-full h-full relative select-none">
-            <Index {...{viewIndex}} />
-            <Information {...{viewIndex}} />
-            <Operator {...{viewIndex}} />
-            <World {...{viewIndex}} />
-            <Media {...{viewIndex}} />
-            <More {...{viewIndex}} />
-        </main>
+        <main id="main" className="w-full h-full relative select-none">{
+            arknightsConfig.rootPage.views.map((Element, index) => {
+                return <PageViewTemplate key={index} viewIndex={viewIndex} selfIndex={index}>
+                    <Element/>
+                </PageViewTemplate>
+            })
+        }</main>
         <LineDecorator/>
         <ScrollTip {...{viewIndex}} />
         <Menu state={navMenuState} {...{viewIndex}}/>

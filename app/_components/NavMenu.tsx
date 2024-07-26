@@ -2,6 +2,7 @@
 import React from "react";
 import {IconBiliBili, IconSkland, IconTapTap, IconWechat, IconWeibo} from "@/app/_components/SvgIcons";
 import arknightsConfig from "@/arknights.config";
+import nextConfig from "@/next.config.mjs";
 
 interface NavMenuProps {
     state: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
@@ -38,7 +39,8 @@ function Navigation({viewIndex, state: [active, setActive]}: {
     return <div className="pt-[1.25rem] pr-[2.25rem] pb-0 pl-[3.375rem]">{
         arknightsConfig.navbar.items.map((item, index) => {
             delay += 70
-            return <a key={index} href={item.href} onClick={() => {setActive(false)}}
+            return <a key={index} href={(nextConfig.assetPrefix ?? "") + item.href}
+                      onClick={() => {setActive(false)}}
                       className={"h-[7.5rem] flex items-center justify-between transition ease-in-out duration-200"}
                       style={{
                           color: viewIndex === index ? "#19d1ff" : "inherit",
