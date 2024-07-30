@@ -1,6 +1,11 @@
 # nextjs-starter-arknights
 
-**The project is under development... / 项目开发中……**
+**~~The project is under development... / 项目开发中……~~**
+
+**Project migration to: / 项目迁移到：**
+**[astro-arknights](https://github.com/Yue-plus/astro-arknights)**
+
+[Live Demo / 在线演示](https://yue-plus.github.io/nextjs-starter-arknights/)
 
 Arknights Next.js Theme Template Starter
 
